@@ -14,7 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categorias = Category::all();
+        return view('categorias.categorias')
+                    ->with('categorias',$categorias);
     }
 
     /**
@@ -24,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('categorias.create');
     }
 
     /**
@@ -35,7 +37,21 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reglas = [
+            'name' => 'required'
+        ];
+
+        $mensaje =[
+            'el ::attribute es obligatorio'
+        ];
+
+        $this->validate($request,$reglas,$mensaje);
+
+        $categoria = new Category($request->all());
+
+        $categoria->save();
+
+        return redirect('/categorias');
     }
 
     /**
