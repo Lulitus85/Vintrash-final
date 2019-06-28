@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\User;
-Use App\Category; //recordemos son solo 4, hot stuff es por hits.
-Use App\Subcategory;
+use App\Category; //recordemos son solo 4, hot stuff es por hits.
+use App\Subcategory;
+use App\Multimedia;
+
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -17,7 +19,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Product::all();
+        return view('productos.vistaProductos')->with('productos', $productos);
     }
 
     /**
@@ -59,8 +62,13 @@ class ProductController extends Controller
 
         $this->validate($request, $reglas, $mensaje);
 
+        //Ruta de la imagen del producto
+/*         $path = $request->file('path')->store('imagenesProductos', 'public'); */
+        //Instancio el nuevo producto
         $producto = new Product($request->all());
-
+        //Le inserto la foto al producto luego de instanciarlo.
+/*         $producto->path = $path; */
+        //Guardo.
         $producto->save();
 
         return redirect('/categorias');

@@ -50,7 +50,10 @@
             <label for="genero">Sub Categoría</label>
             <select class="form-control" name="subcategory_id">
                 <option value="" disabled selected>Seleccione la sub categoría correspondiente</option>
-            @foreach($subcategorias as $subcategoria)
+
+            {{-- Esto me trae todas las subcategorías, y yo quiero que me traiga las subcategorías de la categoría previamente seleccionada (JS) --}}
+            
+            {{--             @foreach($subcategorias as $subcategoria)
             @if ($subcategoria->id == old("subcategory_id"))
                 <option value="{{ $subcategoria->id }}" selected>
                 {{ $subcategoria->name }}
@@ -60,14 +63,17 @@
                 {{ $subcategoria->name }}
                 </option>
             @endif
-            @endforeach
+            @endforeach --}}
+
         </select>
         </div>
 
-        <div class="form-group">
+        {{-- Name de Input? --}}
+        
+  {{--       <div class="form-group">
             <label for="poster">Imagen</label>
-            <input class="form-control" type="file" name="path">
-        </div>
+            <input class="form-control" type="file" name="">
+        </div> --}}
 
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Agregar Película" id="addMovie">

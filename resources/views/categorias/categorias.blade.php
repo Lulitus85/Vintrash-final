@@ -10,7 +10,7 @@
         <section class="container1">
 @foreach($categorias as $categoria)
     @if($categoria->name === "Music")
-    <a class="comon" href="categorias/{{$categoria->id}} ">
+    <a class="comon" href="/productos/categoria/{{$categoria->id}} ">
         <article class="art art1">
           
         </article>
@@ -20,7 +20,7 @@
 
 @foreach($categorias as $categoria)
     @if($categoria->name === "Reading")
-    <a class="comon" href="categorias/{{$categoria->id}}">
+    <a class="comon" href="/productos/categoria/{{$categoria->id}}">
         <article class="art art2">
           
         </article>
@@ -28,7 +28,7 @@
     @endif
 @endforeach
 
-      <a class="hotstuff" href="categorias/hot_stuff">
+      <a class="hotstuff" href="/productos/categoria/hot_stuff">
         <article class="art art3">
          
         </article>
@@ -36,7 +36,7 @@
 
 @foreach($categorias as $categoria)
     @if($categoria->name === "Games")
-    <a class="comon" href="categorias/{{$categoria->id}}">
+    <a class="comon" href="/productos/categoria/{{$categoria->id}}">
         <article class="art art4">
         </article>
     </a>
@@ -45,7 +45,7 @@
 
 @foreach($categorias as $categoria)
     @if($categoria->name === "Others")
-    <a class="comon" href="categorias/{{$categoria->id}}">
+    <a class="comon" href="/productos/categoria/{{$categoria->id}}">
         <article class="art art5">
         </article>
     </a>
