@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Multimedia;
 use Illuminate\Http\Request;
+use App\Product;
 
 class MultimediaController extends Controller
 {
@@ -22,9 +23,11 @@ class MultimediaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $producto = Product::find($id);
+        dd($producto-id);
+        return view('multimedias.create')->with('producto', $producto);
     }
 
     /**
@@ -35,7 +38,7 @@ class MultimediaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

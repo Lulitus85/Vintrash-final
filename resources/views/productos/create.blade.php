@@ -70,13 +70,13 @@
 
         {{-- Name de Input? --}}
         
-  {{--       <div class="form-group">
-            <label for="poster">Imagen</label>
-            <input class="form-control" type="file" name="">
-        </div> --}}
+        <div class="form-group">
+            <label for="cover">Imagen portada producto</label>
+            <input class="form-control" type="file" name="cover">
+        </div>
 
         <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Agregar Película" id="addMovie">
+            <input type="submit" class="btn btn-primary" value="Agregar Producto" id="addMovie">
         </div>
     </form>
 

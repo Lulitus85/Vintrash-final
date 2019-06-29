@@ -54,6 +54,7 @@ class ProductController extends Controller
             'user_id'=>'required',
             'category_id'=>'required',
             /* 'subcategory_id'=>'required' */
+            
         ];
 
         $mensaje=[
@@ -62,16 +63,22 @@ class ProductController extends Controller
 
         $this->validate($request, $reglas, $mensaje);
 
+
+        $cover = $request->file('cover')->store('covers', 'public');
+
         //Ruta de la imagen del producto
 /*         $path = $request->file('path')->store('imagenesProductos', 'public'); */
+
         //Instancio el nuevo producto
         $producto = new Product($request->all());
+
         //Le inserto la foto al producto luego de instanciarlo.
 /*         $producto->path = $path; */
-        //Guardo.
+        $producto->cover = $cover;
+
         $producto->save();
 
-        return redirect('/categorias');
+        return redirect('/productos');
     }
 
     /**
@@ -85,6 +92,7 @@ class ProductController extends Controller
         //
     }
 
+    
     /**
      * Show the form for editing the specified resource.
      *

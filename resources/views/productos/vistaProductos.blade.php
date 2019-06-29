@@ -11,6 +11,10 @@
         <p class="card-text"> Nombre del producto : {{$producto->name}}</p>
         <br>
         <p class="card-text"> Descripción {{$producto->description}}</p>
+        <br>
+        @if($producto->cover !== null)
+            <img src="/storage/{{ $producto->cover }}" alt="lala">
+        @endif
     </div>
 
 </div>    
