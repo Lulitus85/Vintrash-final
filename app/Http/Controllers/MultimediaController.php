@@ -37,25 +37,14 @@ class MultimediaController extends Controller
      */
     public function store(Request $request)
     {    
-            $reglas = [
-                'product_id' => 'required',
-            ];
-
-            $mensaje = [
-                'el campo :attribute es obligatorio'
-            ];
-
-            $this->validate($request, $reglas, $mensaje);
-
-            $bla= recorre el array
-
-            $path = new Multimedia($request->all());
-
-            $path
-            
-
-        return redirect('/productos/usuario');
-
+        foreach ($request->paths as $photo) {
+            $filename = $photo->store('product','public');
+            Multimedia::create([
+                'product_id' => $request->product_id,
+                'path' => $filename
+            ]);
+        }
+        return redirect ('/productos/usuario');
     }
 
 
