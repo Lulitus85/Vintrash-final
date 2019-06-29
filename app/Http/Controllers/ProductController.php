@@ -6,6 +6,7 @@ use App\Product;
 use App\User;
 Use App\Category; //recordemos son solo 4, hot stuff es por hits.
 Use App\Subcategory;
+Use App\Multimedia;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -72,9 +73,11 @@ class ProductController extends Controller
 
     public function showProducts()
     {
+        $multimedias = Multimedia::all();
         $products = Product::all();
-        
-        return view('productos.productsProfile')->with('productos',$products);
+        return view('productos.productsProfile')
+                    ->with('productos',$products)
+                    ->with('multimedias',$multimedias);
     }
 
     /**

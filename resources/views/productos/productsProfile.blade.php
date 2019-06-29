@@ -3,7 +3,6 @@
 @section('content')
 
 
-
             
 <div class="caja-productos">
 
@@ -11,6 +10,7 @@
       @foreach($productos as $producto)
             
       @if( $producto->user_id == Auth::user()->id)
+
       <article class="producto-individual">
            
         <div class="producto">
@@ -41,11 +41,25 @@
           </a>
         </div>
 
+        <div id="miModal" class="modalito">
+        <div id="flex" class="flex">
+          <div class="contenido_modal">
+            <span id="close" class="close"></span>
+            <!--                 acá va un carrousel con las fotos del producto -->
+         @foreach($multimedias as $multimedia)
+            @if($multimedia->product_id == $producto->id)
+            <img src="/storage/{{$multimedia->path}}" alt="">
+            @endif
+         @endforeach   
+          </div>
+        </div>
+      </div>
+
       </article>
         @endif
 @endforeach
 
- {{--     <div id="miModal" class="modalito">
+ {{--    <div id="miModal" class="modalito">
         <div id="flex" class="flex">
           <div class="contenido_modal">
             <span id="close" class="close"></span>

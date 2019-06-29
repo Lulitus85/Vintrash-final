@@ -13,7 +13,7 @@ class Product extends Model
     }
 
     public function multimedia(){
-        return $this->hasMany(Multimedia::class);
+        return $this->hasMany(Multimedia::class,'product_id');
     }
 
     public function categoria(){

@@ -9,6 +9,6 @@ class Multimedia extends Model
     protected $guarded = [];
 
     public function producto(){
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class,'product_id');
     }
 }
