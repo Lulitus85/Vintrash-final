@@ -19,6 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//Usuarios
+/* Route::group(['prefix'=>'profile'], function(){
+    Route::get('/{id}', 'UserController@showProducts')
+
+}); */
+
 //Categorias
 Route::group(['prefix'=>'categorias'], function(){
     Route::get('/','CategoryController@index'); // home original de productos según mockup (categorias)
@@ -34,6 +40,7 @@ Route::group(['prefix'=>'subcategorias'], function(){
 
 //Productos
 Route::group(['prefix'=>'productos'], function(){
+    Route::get('/usuario','ProductController@showProducts');
     Route::get('/cargar','ProductController@create'); //va a llevar al formulario de carga de producto
     Route::post('/cargar','ProductController@store');//va a guardar el producto en la base de datos
     Route::get('/categoria/{id}', 'ProductController@index'); //va a mostrar todos los productos segun el ID de categoria.

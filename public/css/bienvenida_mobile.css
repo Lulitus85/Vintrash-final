@@ -1,0 +1,212 @@
+---------------------------
+/*REGISTER MOBILE FIRST*/
+---------------------------
+/*cambio esto aca*/
+
+@font-face {
+font-family: Wrestlemania;
+src: url(../Fonts/wrestlemania/WRESTLEMANIA.ttf);
+}
+
+@font-face {
+font-family: Frutiger;
+src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
+}
+
+@font-face {
+    font-family: Milestone;
+    src: url(../Fonts/milestone/MilestoneFreeVersion-Script.otf);
+    }
+    
+    html{
+        overflow-x: hidden;
+      }
+      
+    body{
+        overflow-x: hidden;
+    }
+    
+    *{
+          box-sizing: border-box;
+          margin:0 auto;
+          padding: 0;
+    }
+    
+    @keyframes modal {
+        0% {left: -1000px;}
+        100%{left:0;}
+    }
+
+
+    
+    .card{
+        margin-top: 25%;
+        margin-bottom: 10%;
+        width:90vw;
+        border: 2px solid #ccc;
+        border-radius: 0.5em;
+    }
+    
+    
+    .card-body{
+        padding:10px;
+        margin: 5% 0;
+        text-align: center;
+    }
+    
+     
+    .card-text{
+        font-family:Frutiger;
+        font-size:2em;
+        line-height: 0.9em;
+        font-weight: bold;
+    }
+
+    .caja-productos{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0% 7%;
+    }
+    .productos-perfil{
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .producto-individual{
+        width: 25vw;
+        margin: 0;
+    }
+
+    .producto{
+        width: 100%;
+        flex-direction:row;
+        justify-content: center;
+    }
+
+    .imagen-producto{
+        width: 100%;
+    }
+
+    .boton
+    {
+        width: 30%;
+        z-index: 10;
+        position: relative;
+        top: -6%;
+        right:-33%;
+    }
+
+    img.solicitar {
+        width: 100%;
+    }
+
+    .info {
+        width: 100%;
+        margin-top: -17%;
+    }
+
+    .nombre-categoria{
+        font-family: Wrestlemania;
+        font-size: 3em;
+        line-height: 0.7;
+    }
+    .nombre-subcategoria{
+        font-family: Frutiger;
+    }
+    .nombre-producto{
+        font-family: Frutiger;
+    }
+    .ver-fotos{
+        font-family: Frutiger;
+    }
+
+    .modalito{
+        display:none;
+        position: fixed;
+        z-index: 100;
+        overflow: auto;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5)        
+    }
+
+    .flex{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenido_modal{
+        position: relative;
+        width: 50%;
+        border-radius:10px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+        animation-name: modal;
+        animation-duration: 1s;
+    }
+
+    .close{
+        cursor: pointer;
+    }
+
+    .contenido_modal img{
+        width: 100%;
+        border-radius:10px;
+    }
+
+    @keyframes modal{
+        from{
+            left: -500%;
+            opacity: 0; 
+        }
+        to{
+            left:0;
+            opacity:1;
+        }
+    }
+
+
+    /* -----------------------MEDIAQUERIES---------------------- */
+
+
+@media (min-width: 451px) and (max-width: 767px) {
+    .card{
+    width:50vw;
+    margin-top: 25%;
+    margin-bottom: 10%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .card{
+        width:50vw;
+        margin-top: 20%;
+        margin-bottom: 5%;
+    }
+}
+
+@media screen and (min-width: 980px){
+    .card{
+        margin-top: 15%;
+        margin-bottom: 5%;
+        width:30vw;
+        border: 2px solid #ccc;
+        border-radius: 0.5em;
+    }
+
+
+
+
+
+}
+
+

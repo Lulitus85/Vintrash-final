@@ -10,7 +10,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <!-- MEDIDAS Y FUENTES -->
-    <link rel="stylesheet" href="css/fuentesYmedidas.css">
+    <link rel="stylesheet" href="{{asset('css/fuentesYmedidas.css')}}">
     <!-- NAVBAR -->
    {{--  <link rel="stylesheet" href="css/navBar.css"> --}}
     <!-- FOOTER -->
@@ -25,7 +25,7 @@
     <!-- FAQ -->
     {{-- <link rel="stylesheet" href="css/faq_mobile.css"> --}}
     <!-- BIENVENIDA -->
-    {{-- <link rel="stylesheet" href="css/bienvenida_mobile.css"> --}}
+    <link rel="stylesheet" href="{{asset('css/bienvenida_mobile.css')}}">
 
 
     <title>Home | VINTRASH </title>

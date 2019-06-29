@@ -59,11 +59,22 @@ class ProductController extends Controller
 
         $this->validate($request, $reglas, $mensaje);
 
+        $cover = $request->file('cover')->store('covers','public');
+
         $producto = new Product($request->all());
+
+        $producto->cover = $cover;
 
         $producto->save();
 
         return redirect('/categorias');
+    }
+
+    public function showProducts()
+    {
+        $products = Product::all();
+        
+        return view('productos.productsProfile')->with('productos',$products);
     }
 
     /**

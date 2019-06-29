@@ -15,4 +15,8 @@ class Product extends Model
     public function multimedia(){
         return $this->hasMany(Multimedia::class);
     }
+
+    public function categoria(){
+        return $this->belongsTo(Category::class);
+    }
 }
