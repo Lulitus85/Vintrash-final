@@ -3,14 +3,14 @@
 @section('content')
 
 
-@foreach($productos as $producto)
-            
-        @if( $producto->user_id == Auth::user()->id)
+
             
 <div class="caja-productos">
 
     <section class="productos-perfil">
-
+      @foreach($productos as $producto)
+            
+      @if( $producto->user_id == Auth::user()->id)
       <article class="producto-individual">
            
         <div class="producto">
@@ -20,13 +20,20 @@
           <a href="#"><img class="solicitar" src="/img/solicitar_-01.svg" alt="solicitar"></a>
         </div>
         <div class="info">
-          <h4 class="nombre-categoria"> {{$producto->category_id}} </h4>
-          <h5 class="nombre-subcategoria">Subcategoria: </h5>
-          <h5 class="nombre-producto">Producto: {{$producto->name}} </h5>
+          <h4 class="nombre-producto">  {{$producto->name}} </h4>
+          <h5 class="nombre-categoria"> {{$producto->categoria->name}}</h5>
+          @if($producto->subcategory_id != null)
+          <h5 class="nombre-subcategoria"> {{$producto->subcategoria->name}} </h5>
+          @endif
           <h6 class="descripcion-producto"> {{$producto->description}} </h6>
+          <div class="edicion">
           <a href="#" id="abrir">
             <h5 class="ver-fotos">VER FOTOS</h5>
           </a>
+          <a href="#" id="abrir">
+            <h5 class="ver-fotos">AGREGAR FOTOS</h5>
+          </a>
+        </div>
         </div>
       </article>
         @endif
