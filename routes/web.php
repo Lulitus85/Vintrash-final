@@ -48,3 +48,7 @@ Route::group(['prefix'=>'productos'], function(){
     Route::get('/editar/{id}', 'ProductController@edit'); //va a llevar al formulario de edición
     Route::patch('/editar/{id}', 'ProductController@update'); //va a editar en la base de datos
 });
+
+//Multimedias
+Route::get('/productos/usuario/cargar_imagen/{id}','MultimediaController@create');
+Route::post('/productos/usuario/cargar_imagen/{id}','MultimediaController@store');

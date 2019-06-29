@@ -21,20 +21,26 @@
         </div>
         <div class="info">
           <h4 class="nombre-producto">  {{$producto->name}} </h4>
-          <h5 class="nombre-categoria"> {{$producto->categoria->name}}</h5>
+          <div class="categorias"><h5 class="nombre-categoria"> {{$producto->categoria->name}}</h5>
           @if($producto->subcategory_id != null)
-          <h5 class="nombre-subcategoria"> {{$producto->subcategoria->name}} </h5>
+          <h5 class="nombre-subcategoria">  | {{$producto->subcategoria->name}} </h5>
           @endif
+        </div>
           <h6 class="descripcion-producto"> {{$producto->description}} </h6>
-          <div class="edicion">
+        </div>
+
+        <div class="edicion">
           <a href="#" id="abrir">
-            <h5 class="ver-fotos">VER FOTOS</h5>
+            <h5 class="ver-fotos">VER</h5>
+          </a>
+        <a href="/productos/usuario/cargar_imagen/{{$producto->id}}" id="abrir">
+            <h5 class="ver-fotos">CARGAR</h5>
           </a>
           <a href="#" id="abrir">
-            <h5 class="ver-fotos">AGREGAR FOTOS</h5>
+            <h5 class="ver-fotos">ELIMINAR</h5>
           </a>
         </div>
-        </div>
+
       </article>
         @endif
 @endforeach
