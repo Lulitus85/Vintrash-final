@@ -1,10 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Product;
+use App\User;
+Use App\Category; //recordemos son solo 4, hot stuff es por hits.
+Use App\Subcategory;
+Use App\Multimedia;
 use Illuminate\Http\Request;
-
 class ProductController extends Controller
 {
     /**
@@ -16,7 +17,6 @@ class ProductController extends Controller
     {
         //
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -24,9 +24,12 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categorias=Category::all();
+        $subcategorias=Subcategory::all();
+        return view('productos.create')
+                ->with('categorias',$categorias)
+                ->with('subcategorias',$subcategorias);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -35,9 +38,34 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $reglas = [
+            'name'=>'required',
+            'description'=>'required',
+            /* 'active'=>'required',
+            'hits'=>'required', */
+            'user_id'=>'required',
+            'category_id'=>'required',
+            /* 'subcategory_id'=>'required' */
+        ];
+        $mensaje=[
+            'el :attribute es obligatorio'
+        ];
+        $this->validate($request, $reglas, $mensaje);
+        $cover = $request->file('cover')->store('covers','public');
+        $producto = new Product($request->all());
+        $producto->cover = $cover;
+        $producto->save();
+        return redirect('/categorias');
     }
-
+    public function showProducts()
+    {
+        $multimedias = Multimedia::all();
+        $products = Product::all();
+        return view('productos.productsProfile')
+                    ->with('productos',$products)
+                    ->with('multimedias',$multimedias);
+    }
     /**
      * Display the specified resource.
      *
@@ -48,7 +76,6 @@ class ProductController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -59,7 +86,6 @@ class ProductController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -71,7 +97,6 @@ class ProductController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *

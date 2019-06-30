@@ -2,15 +2,17 @@
 
 @section('content')
 
-<div class="container__">
-  <div class="caja-productos">
 
-
-  @foreach($productos as $producto)     
-    @if( $producto->user_id == Auth::user()->id)    
+            
+<div class="caja-productos">
 
     <section class="productos-perfil">
+      @foreach($productos as $producto)
+            
+      @if( $producto->user_id == Auth::user()->id)
+
       <article class="producto-individual">
+           
         <div class="producto">
           <img class="imagen-producto" src="/storage/{{$producto->cover}}" alt="imagen de producto">
         </div>
@@ -18,25 +20,46 @@
           <a href="#"><img class="solicitar" src="/img/solicitar_-01.svg" alt="solicitar"></a>
         </div>
         <div class="info">
-          <h4 class="nombre-categoria"> {{$producto->category_id}} </h4>
-          <h5 class="nombre-subcategoria">Subcategoria: </h5>
-          <h5 class="nombre-producto">Producto: {{$producto->name}} </h5>
+          <h4 class="nombre-producto">  {{$producto->name}} </h4>
+          <div class="categorias"><h5 class="nombre-categoria"> {{$producto->categoria->name}}</h5>
+          @if($producto->subcategory_id != null)
+          <h5 class="nombre-subcategoria">  | {{$producto->subcategoria->name}} </h5>
+          @endif
+        </div>
           <h6 class="descripcion-producto"> {{$producto->description}} </h6>
+        </div>
+
+        <div class="edicion">
           <a href="#" id="abrir">
-            <h5 class="ver-fotos">VER FOTOS</h5>
+            <h5 class="ver-fotos">VER</h5>
+          </a>
+        <a href="/productos/usuario/cargar_imagen/{{$producto->id}}" id="abrir">
+            <h5 class="ver-fotos">CARGAR</h5>
+          </a>
+          <a href="#" id="abrir">
+            <h5 class="ver-fotos">ELIMINAR</h5>
           </a>
         </div>
+
+        <div id="miModal" class="modalito">
+        <div id="flex" class="flex">
+          <div class="contenido_modal">
+            <span id="close" class="close"></span>
+            <!--                 acá va un carrousel con las fotos del producto -->
+         @foreach($multimedias as $multimedia)
+            @if($multimedia->product_id == $producto->id)
+            <img src="/storage/{{$multimedia->path}}" alt="">
+            @endif
+         @endforeach   
+          </div>
+        </div>
+      </div>
+
       </article>
-    </section>
+        @endif
+@endforeach
 
-    @endif
-  @endforeach
-
- {{--  <div class="form-group">
-    <a href="{{view('productos.productsProfile')}}">Agregar nuevo producto</a>
-  </div>
- --}}
- {{--     <div id="miModal" class="modalito">
+ {{--    <div id="miModal" class="modalito">
         <div id="flex" class="flex">
           <div class="contenido_modal">
             <span id="close" class="close"></span>
@@ -46,7 +69,8 @@
         </div>
       </div> --}}
 
+    </section>
+
   </div>
-</div>
 
   @endsection

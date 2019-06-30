@@ -66,7 +66,7 @@
 
         <div class="form-group">
             <label for="poster">Imagen</label>
-            <input class="form-control" type="file" name="path">
+            <input class="form-control" type="file" name="cover">
         </div>
 
         <div class="form-group">
