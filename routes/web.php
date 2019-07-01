@@ -30,6 +30,7 @@ Route::group(['prefix'=>'categorias'], function(){
     Route::get('/','CategoryController@index'); // home original de productos según mockup (categorias)
     Route::get('/cargar','CategoryController@create'); //va a llevar al formulario de carga de categoria (solo administrador)
     Route::post('/cargar','CategoryController@store');//va a guardar el categoria en la base de datos (solo administrador)
+    Route::get('/{id}','CategoryController@show');
 });
 
 //SubCategorias

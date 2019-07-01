@@ -59,7 +59,9 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
 
     .producto-individual{
         width: 90vw;
-        margin-top: 3%;
+        margin-top: 5%;
+        background-color: rgba(0,0,0,0.06);
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
     }
 
     .producto{
@@ -89,7 +91,9 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
 
     .info {
         width: 100%;
-        margin-top: -20%;
+        margin-top: -25%;
+        padding: 4%;
+
     }
 
     .nombre-producto{
@@ -97,9 +101,14 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         font-size: 3em;
         line-height: 0.7;
     }
+    .categorias{
+        display: flex;
+        flex-direction: row;
+    }
     .nombre-categoria{
         font-family: Frutiger;
         font-size: 1.5em;
+        font-weight: bolder;
     }
     .nombre-subcategoria{
         font-family: Frutiger;
@@ -109,9 +118,8 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         font-family: Frutiger;
     }
 
-    .info a{
+    .edicion a{
         text-decoration: none;
-        margin-left: 0;
     }
 
     .edicion{
@@ -120,13 +128,10 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         margin: 2%;
     }
 
-    .edicion a{
-        margin-left: 0%;
-    }
+   
     .ver-fotos{
         font-size: 1em;
         font-family: Frutiger;
-        text-decoration-line: underline;
         color:grey;
     }
 
@@ -188,6 +193,10 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         margin:0;
     }
 
+    .producto-individual{
+        box-shadow: none;
+    }
+
     .nombre-producto{
         font-family: Wrestlemania;
         font-size: 4em;
@@ -207,19 +216,18 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         font-size: 1.5em;
     }
 
-    .info a{
-        text-decoration: none;
-        margin-left: 0;
+    a{
+        text-decoration: none !important;
     }
 
     .edicion{
         display: flex;
         flex-direction: row;
     }
+
     .ver-fotos{
         font-size: 1.2em;
         font-family: Frutiger;
-        text-decoration-line: underline;
         color:grey;
     }
 
@@ -245,8 +253,8 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
     }
 
     .info{
-        margin-top:-15%;
-        padding-left:2%;
+        margin-top:-20%;
+        padding:4%;
     }
 }
 
@@ -269,9 +277,15 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
 
     .producto-individual{
         width: 40vw;
-        margin: 0;
+        margin-top:3%;
         display: flex;
         flex-direction: column;
+        background-color: rgba(0,0,0,0.03);
+        box-shadow: none;
+    }
+
+    .producto-individual:hover{
+        box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
     }
 
     .producto{
@@ -289,16 +303,17 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
     }
 
     .info{
-        margin-left: 5%;
+        padding: 0 4%;
     }
     .categorias{
         display: flex;
         flex-direction: row;
-        margin-bottom: 3%;
+        margin: 0;
     }
 
     .nombre-producto{
         height: 60px;
+        margin: 0;
     }
     .nombre-categoria {
         font-family: Frutiger;
@@ -314,19 +329,32 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
     }
 
     .descripcion-producto{
-        height: 80px;
+        height: 50px;
+        overflow-y: scroll;
         
     }
 
     .edicion{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
         width: 100%;
-        margin-left: 5%;
-        margin-bottom: 5%;
+        margin:0;
     }
 
-    .edicion a{
-        margin-left: 0;
+    .edicion a {
+        text-decoration: none;
     }
+
+    .edicion h5{
+        font-size: 0.7em;
+    }
+
+    .edicion h5:hover{
+        color: red;
+    }
+
+    
 
 }
 
@@ -350,7 +378,13 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
 
     .producto-individual{
         width: 25vw;
-        margin: 0;
+        margin-top: 2%;
+        background-color: rgba(0,0,0,0.03);
+        box-shadow: none;
+    }
+
+    .producto-individual:hover{
+        box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
     }
 
     .producto{
@@ -369,13 +403,14 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         font-family: Wrestlemania;
         font-size: 2em;
         line-height: 0.7;
-        height:50px;
+        height: 35px;
+        margin: 0;
     }
 
     .categorias{
         display: flex;
         flex-direction: row;
-        margin-bottom: 3%;
+        margin:0;
     }
 
     .nombre-categoria{
@@ -395,6 +430,8 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
     .descripcion-producto{
         font-family: Frutiger;
         font-size: 1em;
+        height: 40px !important;
+        overflow-y: scroll;
     }
 
     .caja-productos{
@@ -416,7 +453,7 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
     }
 
     .info{
-        padding-left:2%;
+        padding:0 4%;
     }
 
     .descripcion-producto{
@@ -429,9 +466,16 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         margin-bottom: 5%;
        
     }
+    .edicion a {
+        text-decoration: none;
+    }
 
     .edicion h5{
         font-size: 0.7em;
+    }
+
+    .edicion h5:hover{
+        color: red;
     }
 }
 
@@ -458,6 +502,12 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         width: 25vw;
         margin: 0;
         margin-bottom: 3%;
+        background-color: rgba(0,0,0,0.03);
+        box-shadow: none;
+    }
+
+    .producto-individual:hover{
+        box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
     }
 
     .producto{
@@ -478,7 +528,8 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         font-family: Wrestlemania;
         font-size: 3em;
         line-height: 0.7;
-        height:80px;
+        height:60px;
+        margin:0;
     }
 
     .categorias{
@@ -503,12 +554,13 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
     .descripcion-producto {
         font-family: Frutiger;
         font-size: 1.3em;
-        height: 100px;
+        height: 60px;
+        overflow-y: scroll;
     }
 
     
     .info{
-        padding-left:2%;
+        padding:4%;
     }
     .edicion {
         display: flex;
@@ -517,7 +569,6 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
     }
     .edicion a {
         text-decoration: none;
-        margin-left: 0;
     }
 
     .edicion h5:hover{
