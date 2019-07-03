@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Subcategory;
+use App\Product;
+use App\User;
+use App\Multimedia;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +18,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categorias = Category::all();
+        return view('categorias.categorias')
+                    ->with('categorias',$categorias);
     }
 
     /**
@@ -24,7 +30,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('categorias.create');
     }
 
     /**
@@ -35,7 +41,21 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reglas = [
+            'name' => 'required'
+        ];
+
+        $mensaje =[
+            'el ::attribute es obligatorio'
+        ];
+
+        $this->validate($request,$reglas,$mensaje);
+
+        $categoria = new Category($request->all());
+
+        $categoria->save();
+
+        return redirect('/categorias');
     }
 
     /**
@@ -44,9 +64,15 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        //
+        $categoria=Category::find($id);
+        $productos=Product::all();
+        $multimedias=Multimedia::all();
+        return view('categorias.show')
+                ->with('categoria',$categoria)
+                ->with('productos',$productos)
+                ->with('multimedias',$multimedias);
     }
 
     /**

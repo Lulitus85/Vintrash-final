@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face {
     font-family: Wrestlemania;
     src: url(../Fonts/wrestlemania/WRESTLEMANIA.ttf);
@@ -140,3 +141,584 @@
     
     
     }
+=======
+---------------------------
+/*REGISTER MOBILE FIRST*/
+---------------------------
+/*cambio esto aca*/
+
+@font-face {
+font-family: Wrestlemania;
+src: url(../Fonts/wrestlemania/WRESTLEMANIA.ttf);
+}
+
+@font-face {
+font-family: Frutiger;
+src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
+}
+
+@font-face {
+    font-family: Milestone;
+    src: url(../Fonts/milestone/MilestoneFreeVersion-Script.otf);
+    }
+    
+    html{
+        overflow-x: hidden;
+      }
+      
+    body{
+        overflow-x: hidden;
+    }
+    
+    *{
+          box-sizing: border-box;
+          margin:0 auto;
+          padding: 0;
+    }
+    
+    @keyframes modal {
+        0% {left: -1000px;}
+        100%{left:0;}
+    }
+
+
+    
+    
+    .caja-productos{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0%;
+    }
+    .productos-perfil{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .producto-individual{
+        width: 90vw;
+        margin-top: 5%;
+        background-color: rgba(0,0,0,0.06);
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+    }
+
+    .producto{
+        width: 100%;
+        flex-direction:row;
+        justify-content: center;
+        border: 2px solid black;
+        border-radius: 1%;
+    }
+
+    .imagen-producto{
+        width: 100%;
+    }
+
+    .boton
+    {
+        width: 40%;
+        z-index: 10;
+        position: relative;
+        top: -58px;
+        right: -34%;
+    }
+
+    img.solicitar {
+        width: 100%;
+    }
+
+    .info {
+        width: 100%;
+        margin-top: -25%;
+        padding: 4%;
+
+    }
+
+    .nombre-producto{
+        font-family: Wrestlemania;
+        font-size: 3em;
+        line-height: 0.7;
+    }
+    .categorias{
+        display: flex;
+        flex-direction: row;
+    }
+    .nombre-categoria{
+        font-family: Frutiger;
+        font-size: 1.5em;
+        font-weight: bolder;
+    }
+    .nombre-subcategoria{
+        font-family: Frutiger;
+    }
+
+    .descripcion-producto{
+        font-family: Frutiger;
+    }
+
+    .edicion a{
+        text-decoration: none;
+    }
+
+    .edicion{
+        display: flex;
+        flex-direction: row;
+        margin: 2%;
+    }
+
+   
+    .ver-fotos{
+        font-size: 1em;
+        font-family: Frutiger;
+        color:grey;
+    }
+
+    .modalito{
+        display:none;
+        position: fixed;
+        z-index: 100;
+        overflow: auto;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5)        
+    }
+
+    .flex{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenido_modal{
+        position: relative;
+        width: 50%;
+        border-radius:10px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+        animation-name: modal;
+        animation-duration: 1s;
+    }
+
+    .close{
+        cursor: pointer;
+    }
+
+    .contenido_modal img{
+        width: 100%;
+        border-radius:10px;
+    }
+
+    @keyframes modal{
+        from{
+            left: -500%;
+            opacity: 0; 
+        }
+        to{
+            left:0;
+            opacity:1;
+        }
+    }
+
+
+    /* -----------------------MEDIAQUERIES---------------------- */
+
+
+@media (min-width: 451px) and (max-width: 599px) {
+
+    .caja-productos{
+        margin:0;
+    }
+
+    .producto-individual{
+        box-shadow: none;
+    }
+
+    .nombre-producto{
+        font-family: Wrestlemania;
+        font-size: 4em;
+        line-height: 0.7;
+    }
+    .nombre-categoria{
+        font-family: Frutiger;
+        font-size: 1.8em;
+    }
+    .nombre-subcategoria{
+        font-family: Frutiger;
+        font-size: 1.8em;
+    }
+
+    .descripcion-producto{
+        font-family: Frutiger;
+        font-size: 1.5em;
+    }
+
+    a{
+        text-decoration: none !important;
+    }
+
+    .edicion{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .ver-fotos{
+        font-size: 1.2em;
+        font-family: Frutiger;
+        color:grey;
+    }
+
+    .boton{
+        width:30%;
+    }
+
+    .caja-productos{
+        width: 80%;
+        padding: 0;
+    }
+
+    .producto{
+        width: 100%;
+        border: 2px solid black;
+        border-radius: 1%;
+    }
+
+    .imagen-producto{
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .info{
+        margin-top:-20%;
+        padding:4%;
+    }
+}
+
+@media (min-width: 600px)  and (max-width: 767px){
+    .caja-productos{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0%;
+       
+    }
+    .productos-perfil{
+        width: 90vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .producto-individual{
+        width: 40vw;
+        margin-top:3%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0,0,0,0.03);
+        box-shadow: none;
+    }
+
+    .producto-individual:hover{
+        box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
+    }
+
+    .producto{
+        width: 100%;
+        height: 200px;
+        flex-direction:row;
+        justify-content: center;
+        border: 2px solid black;
+        border-radius: 1%;
+    }
+
+    .imagen-producto{
+        width: 100%;
+        height: 100%;
+    }
+
+    .info{
+        padding: 0 4%;
+    }
+    .categorias{
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+    }
+
+    .nombre-producto{
+        height: 60px;
+        margin: 0;
+    }
+    .nombre-categoria {
+        font-family: Frutiger;
+        font-size: 1.5em;
+        margin: 0;
+        font-weight: bolder;
+    }
+
+    .nombre-subcategoria {
+        font-family: Frutiger;
+        margin: 0;
+        font-size: 1.5em;
+    }
+
+    .descripcion-producto{
+        height: 50px;
+        overflow-y: scroll;
+        
+    }
+
+    .edicion{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+        width: 100%;
+        margin:0;
+    }
+
+    .edicion a {
+        text-decoration: none;
+    }
+
+    .edicion h5{
+        font-size: 0.7em;
+    }
+
+    .edicion h5:hover{
+        color: red;
+    }
+
+    
+
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+    .caja-productos{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0%;
+       
+    }
+    .productos-perfil{
+        width: 90vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .producto-individual{
+        width: 25vw;
+        margin-top: 2%;
+        background-color: rgba(0,0,0,0.03);
+        box-shadow: none;
+    }
+
+    .producto-individual:hover{
+        box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
+    }
+
+    .producto{
+        width: 100%;
+        flex-direction:row;
+        justify-content: center;
+        border: 2px solid black;
+        border-radius: 1%;
+    }
+
+    .imagen-producto{
+        width: 100%;
+    }
+
+    .nombre-producto{
+        font-family: Wrestlemania;
+        font-size: 2em;
+        line-height: 0.7;
+        height: 35px;
+        margin: 0;
+    }
+
+    .categorias{
+        display: flex;
+        flex-direction: row;
+        margin:0;
+    }
+
+    .nombre-categoria{
+        font-family: Frutiger;
+        font-size: 1.2em;
+        margin-left: 0;
+        font-weight: bolder;
+        margin-right: 1%;
+    }
+
+    .nombre-subcategoria{
+        font-family: Frutiger;
+        font-size: 1.2em;
+        margin-left: 0;
+    }
+
+    .descripcion-producto{
+        font-family: Frutiger;
+        font-size: 1em;
+        height: 40px !important;
+        overflow-y: scroll;
+    }
+
+    .caja-productos{
+        width: 80%;
+        padding: 0;
+    }
+
+    .producto{
+        width: 100%;
+        height: 150px;
+        border: 2px solid black;
+        border-radius: 1%;
+    }
+
+    .imagen-producto{
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .info{
+        padding:0 4%;
+    }
+
+    .descripcion-producto{
+        height: 80px;
+        
+    }
+
+    .edicion{
+        width: 100%;
+        margin-bottom: 5%;
+       
+    }
+    .edicion a {
+        text-decoration: none;
+    }
+
+    .edicion h5{
+        font-size: 0.7em;
+    }
+
+    .edicion h5:hover{
+        color: red;
+    }
+}
+
+
+@media screen and (min-width: 980px){
+   
+    .caja-productos{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0%;
+    }
+    .productos-perfil{
+        width: 90vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+ 
+    }
+
+    .producto-individual{
+        width: 25vw;
+        margin: 0;
+        margin-bottom: 3%;
+        background-color: rgba(0,0,0,0.03);
+        box-shadow: none;
+    }
+
+    .producto-individual:hover{
+        box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
+    }
+
+    .producto{
+        width: 100%;
+        height: 250px;
+        flex-direction:row;
+        justify-content: center;
+        border: 2px solid black;
+        border-radius: 1%;
+    }
+
+    .imagen-producto{
+        width: 100%;
+        height: 100%;
+    }
+
+    .nombre-producto{
+        font-family: Wrestlemania;
+        font-size: 3em;
+        line-height: 0.7;
+        height:60px;
+        margin:0;
+    }
+
+    .categorias{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 3%;
+    }
+
+    .nombre-categoria{
+        font-family: Frutiger;
+        font-size: 1.8em;
+        margin-left: 0;
+        margin-right: 1%;
+        font-weight: bold;
+    }
+    .nombre-subcategoria{
+        font-family: Frutiger;
+        font-size: 1.8em;
+        margin-left: 0;
+    }
+
+    .descripcion-producto {
+        font-family: Frutiger;
+        font-size: 1.3em;
+        height: 60px;
+        overflow-y: scroll;
+    }
+
+    
+    .info{
+        padding:4%;
+    }
+    .edicion {
+        display: flex;
+        flex-direction: row;
+        margin: 3%;
+    }
+    .edicion a {
+        text-decoration: none;
+    }
+
+    .edicion h5:hover{
+        color: red;
+    }
+}
+
+
+>>>>>>> 84421e6d76674492e5b30e064f33c159a298defd

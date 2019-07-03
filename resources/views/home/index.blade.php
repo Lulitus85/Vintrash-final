@@ -1,5 +1,5 @@
-@extends('layouts.layout')
-@section('main')
+@extends('layouts.master')
+@section('content')
 <main class="caja">
     <div class="container">
         <a href="#"><img src="img/banner_pick_your_treasure.svg" alt=""></a>
@@ -26,3 +26,4 @@
     </section>
 </main>
 @endsection
+ 

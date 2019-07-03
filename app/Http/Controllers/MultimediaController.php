@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Multimedia;
+use App\Product;
 use Illuminate\Http\Request;
 
 class MultimediaController extends Controller
@@ -22,9 +23,10 @@ class MultimediaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $producto = Product::find($id);
+        return view('multimedias.create')->with('producto',$producto);
     }
 
     /**
@@ -34,9 +36,18 @@ class MultimediaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {    
+        foreach ($request->paths as $photo) {
+            $filename = $photo->store('product','public');
+            Multimedia::create([
+                'product_id' => $request->product_id,
+                'path' => $filename
+            ]);
+        }
+        return redirect ('/productos/usuario');
     }
+
+
 
     /**
      * Display the specified resource.

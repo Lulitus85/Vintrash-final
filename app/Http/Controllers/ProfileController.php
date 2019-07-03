@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Subcategory;
 use Illuminate\Http\Request;
-use App\Category;
 
-class SubcategoryController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +13,7 @@ class SubcategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('perfil.index');
     }
 
     /**
@@ -25,8 +23,7 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-        $categorias = Category::all();
-        return view('subcategorias.create')->with('categorias',$categorias);
+        //
     }
 
     /**
@@ -37,31 +34,16 @@ class SubcategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $reglas = [
-            'name'=>'required',
-            'category_id' => 'required'
-        ];
-
-        $mensaje=[
-            'el campo :attribute es obligatorio'
-        ];
-
-        $this->validate($request, $reglas, $mensaje);
-
-        $subcategoria = new Subcategory($request->all());
-
-        $subcategoria->save();
-
-        return redirect('/subcategorias/cargar');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Subcategory  $subcategory
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Subcategory $subcategory)
+    public function show($id)
     {
         //
     }
@@ -69,10 +51,10 @@ class SubcategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Subcategory  $subcategory
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Subcategory $subcategory)
+    public function edit($id)
     {
         //
     }
@@ -81,10 +63,10 @@ class SubcategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Subcategory  $subcategory
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Subcategory $subcategory)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -92,10 +74,10 @@ class SubcategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Subcategory  $subcategory
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Subcategory $subcategory)
+    public function destroy($id)
     {
         //
     }
