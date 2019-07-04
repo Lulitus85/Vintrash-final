@@ -10,7 +10,7 @@ class Subcategory extends Model
 
     public function producto()
     {
-        return $this->hasMany(Product::class, 'subcategory_id');
+        return $this->hasMany(Product::class);
     }
 
     public function categorias(){
