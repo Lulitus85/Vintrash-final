@@ -8,7 +8,7 @@ Route::get('/faq', 'FaqController@index');
 
 
 Route::group(['prefix'=>'profile'], function(){
-
+    
     Route::get('/', 'ProfileController@index');
     // Route::get('/{id}', 'UserController@showProducts');
 

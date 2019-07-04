@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <body>
-        @extends('components.head')
-        @extends('components.navbar')
-        @yield('content')
-        @extends('components.footer')
-        @extends('components.scripts')
+    @include('layouts.partials.head')
+    <body>    
+    @include('layouts.partials.navbar')
+    @yield('content')
+    @include('layouts.partials.footer')       
     </body>
 </html>
+
 
