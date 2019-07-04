@@ -1,15 +1,9 @@
-@extends('master')
-
+@extends('master') 
 @section('content')
-
-
-            
+        
 <div class="caja-productos">
 
     <section class="productos-perfil">
-      @foreach($productos as $producto)
-            
-      @if( $producto->user_id == Auth::user()->id)
 
       <article class="producto-individual">
            
@@ -30,22 +24,19 @@
         </div>
 
         <div class="edicion">
+            <a href="#" id="abrir">
+                <button class="ver-fotos">VER GALERIA</button>
+            </a>
 
-          <a href="/productos/usuario/{{$producto->id}}" id="abrir">
-            <h5 class="ver-fotos">VER PRODUCTO</h5>
-          </a>
-
-          <a href="/productos/usuario/cargar_imagen/{{$producto->id}}" id="abrir">
-            <h5 class="ver-fotos">CARGAR FOTOS</h5>
-          </a>
-
-        <a href="/productos/usuario/editar/{{$producto->id}}" id="">
-            <h5 class="ver-fotos">EDITAR</h5>
-          </a>
+            <form method="POST" action="{{$producto->id}}">
+                @method('DELETE')
+                @csrf
+                <button type="submit" value="BORRAR REGISTRO" style="margin-left : 15px">BORRAR</button>
+            </form>
 
         </div>
 
-{{--         <div id="miModal" class="modalito">
+        <div id="miModal" class="modalito">
           <div id="flex" class="flex">
           <div class="contenido_modal">
             <span id="close" class="close"></span>
@@ -57,11 +48,11 @@
          @endforeach   
           </div>
         </div>
-      </div> --}}
+      </div>
 
       </article>
-        @endif
-@endforeach
+{{--         @endif
+@endforeach --}}
 
  {{--    <div id="miModal" class="modalito">
         <div id="flex" class="flex">
@@ -77,4 +68,4 @@
 
   </div>
 
-  @endsection
+@endsection

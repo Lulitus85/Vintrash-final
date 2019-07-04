@@ -72,9 +72,12 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $multimedias = Multimedia::all();
+        $producto = Product::find($id);
+        return view('productos.show')->with('producto', $producto)
+                                    ->with('multimedias', $multimedias);
     }
     /**
      * Show the form for editing the specified resource.
@@ -82,9 +85,16 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $producto = Product::find($id);
+/*         $multimedia = Multimedia::find($id); */
+        $categorias = Category::all();
+        $subcategorias = Subcategory::all();
+        return view('productos.edit')->with('producto', $producto)
+                                /*     ->with('multimedia', $multimedia) */
+                                    ->with('categorias', $categorias)
+                                    ->with('subcategorias', $subcategorias);
     }
     /**
      * Update the specified resource in storage.
@@ -93,9 +103,31 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        
+        $reglas = [
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'category_id' => 'required|integer',
+            'subcategory_id' => 'required|integer',
+        ];
+        $mensaje = [
+            'required' => 'El campo :attribute es obligatorio.'
+        ];
+
+
+        $this->validate($request, $reglas, $mensaje);
+
+        $producto = Product::find($id);
+      
+        $producto->name = $request->input('name') !== $producto->name ? $request->input('name') : $producto->name;
+        $producto->description = $request->input('description') !== $producto->description ? $request->input('description') : $producto->description;
+        $producto->category_id = $request->input('category_id') !== $producto->category_id ? $request->input('category_id') : $producto->category_id;
+        $producto->subcategory_id = $request->input('subcategory_id') !== $producto->subcategory_id ? $request->input('subcategory_id') : $producto->subcategory_id;
+        $producto->save();
+
+        return redirect("/productos/usuario");
     }
     /**
      * Remove the specified resource from storage.
@@ -103,8 +135,9 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $producto = product::destroy($id);
+        return redirect("/productos/usuario");
     }
 }

@@ -32,12 +32,14 @@ Route::group(['prefix'=>'subcategorias'], function(){
 //Productos
 Route::group(['prefix'=>'productos'], function(){
     Route::get('/usuario','ProductController@showProducts');
+    Route::get('/usuario/{id}','ProductController@show');
     Route::get('/cargar','ProductController@create'); //va a llevar al formulario de carga de producto
     Route::post('/cargar','ProductController@store');//va a guardar el producto en la base de datos
     Route::get('/categoria/{id}', 'ProductController@index'); //va a mostrar todos los productos segun el ID de categoria.
     Route::get('/{id}', 'ProductController@show'); //va a mostrar las fotos y detalle de un producto (JAVASCRIPT)
-    Route::get('/editar/{id}', 'ProductController@edit'); //va a llevar al formulario de edición
-    Route::patch('/editar/{id}', 'ProductController@update'); //va a editar en la base de datos
+    Route::get('/usuario/editar/{id}', 'ProductController@edit'); //va a llevar al formulario de edición
+    Route::patch('/usuario/{id}', 'ProductController@update'); //va a editar en la base de datos
+    Route::delete('/usuario/{id}', 'ProductController@destroy');
 });
 //Multimedias
 Route::get('/productos/usuario/cargar_imagen/{id}','MultimediaController@create');
