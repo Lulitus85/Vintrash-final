@@ -1,8 +1,10 @@
 <?php
+use App\Http\Controllers\Auth\RegisterController;
 
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
+
 
 Route::get('/faq', 'FaqController@index');
 
@@ -10,7 +12,7 @@ Route::get('/faq', 'FaqController@index');
 Route::group(['prefix'=>'profile'], function(){
     
     Route::get('/', 'ProfileController@index'); // Route::get('/{id}', 'UserController@showProducts');
-
+    Route::get('/{id}', 'ProfileController@index');
 });
 
 //Categorias
@@ -48,3 +50,4 @@ Route::group(['prefix'=>'productos'], function(){
 Route::get('/productos/usuario/cargar_imagen/{id}','MultimediaController@create');
 Route::post('/productos/usuario/cargar_imagen/{id}','MultimediaController@store');
 
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
