@@ -36,28 +36,103 @@ body {
     }
 }
 
-.card {
-    margin-top: 25%;
-    margin-bottom: 10%;
-    width: 90vw;
-    border: 2px solid #ccc;
-    border-radius: 0.5em;
+.user {
+    margin-top: 10%;
+    margin-left: 50px;
 }
 
-.card-body {
-    padding: 10px;
-    margin: 5% 0;
+.user-content {
+    display: flex;
+}
+
+.user-avatar {
+    margin: 0% 0% 0% 5%;
+    padding: 0%;
+    width: 300px;
+    height: 300px;
+    background-image: url("../img/marco_fotoPerfil-01.svg");
+    background-repeat: no-repeat;
+}
+
+.user-avatar > img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    left: 3%;
+    top: 14%;
+    z-index: -1;
+}
+
+.user-details {
+    margin: 2% 0% 1% 0%;
+}
+
+.user-details > h1 {
+    margin: 6% 0% 0% 0%;
+    font-size: 3.5em;
+}
+
+.data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "icons details";
+    margin: 2%;
+}
+
+.icons {
+    margin: 0%;
+    grid-area: icons;
+    list-style: none;
+    justify-content: center;
+}
+
+.icons > li {
+    color: white;
+    background: black;
+    margin: 15px 10px 10px 10px;
     text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    width: 40%;
 }
 
-.card-text {
-    font-family: Frutiger;
-    font-size: 2em;
-    line-height: 0.9em;
+.icons > li img {
+    width: 20px;
+}
+
+.details {
+    margin: 0%;
+    grid-area: details;
+    list-style: none;
+    padding-right: 45px;
+}
+
+.details > li {
+    margin: 8px;
+    text-align: right;
     font-weight: bold;
+    font-size: 1em;
+    color: #ffc03d;
+}
+
+.user-motto {
+    position: relative;
+    margin: 0%;
+    left: -9%;
+    align-self: center;
+    background: black;
+    color: white;
+    font-size: 1.5em;
+    padding: 0.1em 0.5em 0.1em 2em;
+    text-align: center;
+    vertical-align: 50%;
+    border-radius: 0px 4px 4px 0px;
 }
 
 .caja-productos {
+    margin-top: 50px;
+    margin-bottom: 50px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -107,14 +182,15 @@ img.solicitar {
 /* -----------------------MEDIAQUERIES---------------------- */
 
 @media (min-width: 451px) and (max-width: 767px) {
-    .card {
-        width: 50vw;
-        margin-top: 25%;
-        margin-bottom: 10%;
+    .user-content {
+        flex-direction: column;
+    }
+    .user-motto {
+        width: 100%;
     }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+/* @media (min-width: 768px) and (max-width: 979px) {
     .card {
         width: 50vw;
         margin-top: 20%;
@@ -130,4 +206,4 @@ img.solicitar {
         border: 2px solid #ccc;
         border-radius: 0.5em;
     }
-}
+} */
