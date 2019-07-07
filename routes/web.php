@@ -49,6 +49,7 @@ Route::group(['prefix'=>'productos'], function(){
     Route::get('/{id}/editar', 'ProductController@edit'); //va a llevar al formulario de edición
     Route::patch('/{id}/editar', 'ProductController@update'); //va a editar en la base de datos
     Route::delete('/{id}/editar','ProductController@destroy');//va a eliminar un producto
+    
 });
 
 //Multimedias

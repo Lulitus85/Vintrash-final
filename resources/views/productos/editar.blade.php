@@ -36,7 +36,7 @@
                 </div>
             <div class="form-group">
                 <label for="description" class="nombre-categoria"><b> Descripción </b></label>
-            <input name="description" value={{$producto->description}}"" type="text" class="form-control"  placeholder="">
+            <input name="description" value="{{$producto->description}}" type="text" class="form-control"  placeholder="">
             </div>
             <div class="form-group">
                 <label for="category_id" class="nombre-categoria"><b> Categoría </b></label>

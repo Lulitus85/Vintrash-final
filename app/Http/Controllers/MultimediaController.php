@@ -26,7 +26,10 @@ class MultimediaController extends Controller
     public function create($id)
     {
         $producto = Product::find($id);
-        return view('multimedias.create')->with('producto',$producto);
+        $multimedias = Multimedia::all();
+        return view('multimedias.create')
+                ->with('producto',$producto)
+                ->with('multimedias',$multimedias);
     }
 
     /**
@@ -44,7 +47,7 @@ class MultimediaController extends Controller
                 'path' => $filename
             ]);
         }
-        return redirect ('/productos/usuario');
+        return redirect ('/productos/' . $request->product_id);
     }
 
 

@@ -29,8 +29,26 @@
         </div>
 
         <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Agregar Película" id="addMovie">
+            <input type="submit" class="btn btn-primary" value="Agregar Imagenes" id="addImage">
         </div>
     </form>
+    
+        <br>
+        <hr>
+        <br>
+        
+        <div class="edicion-imagenes">
+        @foreach($multimedias as $multimedia)
+                @if($multimedia->product_id == $producto->id)
+        <div class="imagenes-cargadas">
+            <div class="img">     
+                <img src="/storage/{{$multimedia->path}}" alt="">   
+            </div>
+        </div>
+                @endif
+        @endforeach
+        </div>
+        
+    
 
 @endsection

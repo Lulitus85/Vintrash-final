@@ -86,9 +86,13 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $producto = Product::find($id);
+        $multimedias=Multimedia::all();
+        return view('productos.show')
+                ->with('producto',$producto)
+                ->with('multimedias',$multimedias);
     }
 
     /**
@@ -142,11 +146,16 @@ class ProductController extends Controller
          $producto->category_id = $request->input('category_id') !== $producto->category_id ? $request->input('category_id') : $producto->category_id;
          $producto->subcategory_id = $request->input('subcategory_id') !== $producto->subcategory_id ? $request->input('subcategory_id') : $producto->subcategory_id;
 
-         if($request->input('cover') !== null){
+         /* if($request->input('cover') !== null){
             $cover = $request->file('cover')->store('covers','public');
             $producto->cover = $cover;
             $producto->save();
             return redirect("/productos/usuario");
+         } ---> ASÍ LO HABIAMOS HECHO. ES UN INPUT PERO HAY QUE LLAMARLO COMO FILE.*/
+
+         if($request->file('cover') !== null){
+            $cover = $request->file('cover')->store('covers','public');
+            $producto->cover = $cover;
          }
          
          $producto->save();
