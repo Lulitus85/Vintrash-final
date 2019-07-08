@@ -37,7 +37,6 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         100%{left:0;}
     }
 
-
     .__formularios{
         width:80vw;
     }
@@ -104,6 +103,7 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         font-family: Wrestlemania;
         font-size: 3em;
         line-height: 0.7;
+        text-transform: lowercase;
     }
     .categorias{
         display: flex;
@@ -279,6 +279,7 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         font-family: Wrestlemania;
         font-size: 4em;
         line-height: 0.7;
+        text-transform: lowercase;
     }
     .nombre-categoria{
         font-family: Frutiger;
@@ -478,6 +479,7 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         line-height: 0.7;
         height: 35px;
         margin: 0;
+        text-transform: lowercase;
     }
 
     .categorias{
@@ -600,6 +602,7 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
         line-height: 0.7;
         height:60px;
         margin:0;
+        text-transform: lowercase;
     }
 
     .categorias{
