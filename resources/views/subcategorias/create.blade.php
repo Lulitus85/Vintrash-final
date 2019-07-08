@@ -4,14 +4,14 @@
 
 
 <div class="offset-3 col-6">
-    <h1 align="center">Agregar Sub Categoria</h1>
+    <h1 align="center" class="__nuevasImagenes">Agregar Sub Categoria</h1>
     <hr>
     <br>
-    <form class="form-group" action="" method="post">
+    <form class="form-group __formulario" action="" method="post">
         @csrf
         <div class="form-group">
             <label for="categoria">Sub Categoria Nombre</label>
-            <input type="text" name="name" value=" " class="form-control">
+            <input type="text" name="name" value=" " class="form-control __files">
         </div>
 
         <div class="form-group">
@@ -27,7 +27,7 @@
         <br>     
 
         <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Agregar Sub Categoria" id="addSubCategory">
+            <input type="submit" class="btn btn-primary __boton" value="Agregar Sub Categoria" id="addSubCategory">
         </div>
     </form>
 

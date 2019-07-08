@@ -38,7 +38,9 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
     }
 
 
-    
+    .__formularios{
+        width:80vw;
+    }
     
     .caja-productos{
         width: 100%;
@@ -257,6 +259,7 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
     
     .__formulario{
         margin: 0;
+        width:80vw;
     }
 
     /* -----------------------MEDIAQUERIES---------------------- */
