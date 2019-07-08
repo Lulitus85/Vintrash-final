@@ -114,6 +114,12 @@ body {
     width: 40%;
 }
 
+.icons a {
+    text-decoration: none;
+    color: white;
+    outline: none;
+}
+
 .icons > li img {
     width: 20px;
 }

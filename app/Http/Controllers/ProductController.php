@@ -10,6 +10,7 @@ Use App\Multimedia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class ProductController extends Controller
 {
     /**
@@ -90,9 +91,13 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
-    {
-        //
+    public function show($id)
+    {           
+        $product = Product::find($id); // fetch product from database
+        if(Auth::user() == null || $product->user_id != Auth::user()->id){
+        $product->increment('hits'); // add a new page view to our `views` column by incrementing it
+        }
+        return view('productos.show')->with('product', $product);
     }
 
     /**

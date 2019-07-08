@@ -12,7 +12,7 @@
             <ul class="icons">
             <li><img src="{{asset("img/admiration_marc-01.svg")}}" alt=""></li>
                 <li>Mensajes</li>
-                <li>Reseñas</li>                
+                <li><a href="/productos/cargar">Agregar producto</a></li>                
             </ul>       
             <ul class="details">
                 <li>Ofertas 102</li>
@@ -30,11 +30,13 @@
             @foreach($products as $product)            
             <article class="producto-individual">
                 <img class="imagen-producto" src="{{url('/storage/'. $product->cover)}}" alt="imagen de producto">
+                @if(Auth::user()->id != $product->user_id)
                 <a href="#"><img class="solicitar" src="img/solicitar_-01.svg" alt="solicitar"></a>
+                @endif
                 <h4 class="nombre-categoria">{{$product->categoria->name}} </h4>
                 <h5 class="nombre-subcategoria">{{$product->subcategoria->name}}</h5>
                 <h5 class="nombre-producto">{{$product->name}} </h5>
-                <a href="#"><h5 class="ver-fotos">VER FOTOS</h5></a>
+                <a href="/productos/{{$product->id}}"><h5 class="ver-fotos">Ver Detalle</h5></a>
             </article>
             @endforeach
                   
