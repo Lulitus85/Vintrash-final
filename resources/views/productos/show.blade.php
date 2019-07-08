@@ -1,14 +1,82 @@
 @extends('layouts.master')
-@section('content')  
+@section('content')
 
-<article class="producto-individual">
-    <img class="imagen-producto" src="{{url('/storage/'. $product->cover)}}" alt="imagen de producto">
-    @if(Auth::user() == null || Auth::user()->id != $product->user_id)
-    <a href="#"><img class="solicitar" src="{{asset('img/solicitar_-01.svg')}}" alt="solicitar"></a>
+
+<div class="">
+        <section class="">
+            <article class="producto-perfil">
+                <div class="producto">
+                    <img class="imagen-producto" src="/storage/{{$producto->cover}}" style="border: 3px solid black; border-radius:3px;" alt="imagen de producto">
+                </div>
+                
+    
+    {{-- @if($producto->user_id != Auth::user()->id)  -->PARA QUE NO SE VEA EL SOLICITAR SI SOS EL DUEÑO DEL PERFIL --}}
+    @if(Auth::user()->id == $producto->user_id)
+    <div class="boton" style="display:none">
+        <a href="#"><img class="solicitar" src="/img/solicitar_-01.svg" alt="solicitar"></a>
+    </div>
+    
+    {{-- @endif --}}
+    <div class="info" style="margin-top:0%">
+        <h4 class="nombre-producto"> {{$producto->name}} </h4>
+        <div class="categorias">
+            <h5 class="nombre-categoria"> {{$producto->categoria->name}}</h5>
+            @if($producto->subcategory_id != null)
+            <h5 class="nombre-subcategoria"> | {{$producto->subcategoria->name}} </h5>
+            @endif
+        </div>
+        <h6 class="descripcion-producto"> {{$producto->description}} </h6>
+    </div>
     @endif
-    <h4 class="nombre-categoria">{{$product->categoria->name}} </h4>
-    <h5 class="nombre-subcategoria">{{$product->subcategoria->name}}</h5>
-    <h5 class="nombre-producto">{{$product->name}} </h5>
-    <a href="#"><h5 class="ver-fotos">VER FOTOS</h5></a>
-</article>
+    
+    <div class="edicion">
+    
+     {{--    <a href="#" id="abrir"> --}}
+            
+        <a href="#">
+           
+            <h5 class="ver-fotos"  id="abrir" style="color:red;">VER FOTOS</h5>
+          </a>
+          
+          <div id="miModal" class="modalito">
+                <div id="flex" class="flex">
+                    <div class="contenido_modal">
+                        <span id="close" class="close"></span>
+                        @foreach($multimedias as $multimedia)
+                        @if($multimedia->product_id !== null)
+                        <!--                 acá va un carrousel con las fotos del producto -->
+                       {{--  @foreach($multimedias as $multimedia) --}}
+                        @if ($producto->id ==$multimedia->product_id)
+                        <img class="mySlides" src=" /storage/{{$multimedia->path}}" alt="">
+                        @endif
+                        {{-- @endforeach --}}
+                        @endif
+                        @endforeach
+ 
+                        <button class="w3-button w3-light-grey  w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+ 
+                        <button class="w3-button w3-light-grey  w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+            {{-- @if($producto->user_id == Auth::user()->id)  -->PARA QUE NO SE VEA EL CARGAR Y ELIMINAS SI NO EL DUEÑO DEL PERFIL --}}
+        </a>
+        <a href="/productos/usuario/cargar_imagen/{{$producto->id}}">
+            <h5 class="ver-fotos">CARGAR IMAGENES</h5>
+        </a>
+    
+        <a href="{{$producto->id}}/editar" id="abrir">
+            <h5 class="ver-fotos">EDITAR PRODUCTO</h5>
+        </a>
+        {{-- @endif --}}
+    
+    </div>
+    
+    </article>
+
+
+    </section>
+    
+    </div>
+
 @endsection

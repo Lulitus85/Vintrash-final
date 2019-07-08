@@ -26,7 +26,10 @@ class MultimediaController extends Controller
     public function create($id)
     {
         $producto = Product::find($id);
-        return view('multimedias.create')->with('producto',$producto);
+        $multimedias = Multimedia::all();
+        return view('multimedias.create')
+                ->with('producto',$producto)
+                ->with('multimedias',$multimedias);
     }
 
     /**
@@ -44,7 +47,7 @@ class MultimediaController extends Controller
                 'path' => $filename
             ]);
         }
-        return redirect ('/productos/usuario');
+        return redirect ('/productos/' . $request->product_id);
     }
 
 
@@ -89,8 +92,10 @@ class MultimediaController extends Controller
      * @param  \App\Multimedia  $multimedia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Multimedia $multimedia)
-    {
-        //
+    public function destroy($id)
+    {  
+        $multimedia = Multimedia::find($id);
+        Multimedia::destroy($id);
+        return redirect('/productos/usuario/cargar_imagen/'.$multimedia->product_id);
     }
 }

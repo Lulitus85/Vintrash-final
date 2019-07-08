@@ -1,220 +1,618 @@
 @font-face {
     font-family: Wrestlemania;
     src: url(../Fonts/wrestlemania/WRESTLEMANIA.ttf);
-}
-
-@font-face {
+    }
+    @font-face {
     font-family: Frutiger;
     src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
-}
-
-@font-face {
-    font-family: Milestone;
-    src: url(../Fonts/milestone/MilestoneFreeVersion-Script.otf);
-}
-
-html {
-    overflow-x: hidden;
-}
-
-body {
-    overflow-x: hidden;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 0;
-}
-
-@keyframes modal {
-    0% {
-        left: -1000px;
     }
-    100% {
-        left: 0;
+    @font-face {
+        font-family: Milestone;
+        src: url(../Fonts/milestone/MilestoneFreeVersion-Script.otf);
+        }
+        
+        html{
+            overflow-x: hidden;
+          }
+          
+        body{
+            overflow-x: hidden;
+        }
+        
+        *{
+              box-sizing: border-box;
+              margin:0 auto;
+              padding: 0;
+        }
+        
+        @keyframes modal {
+            0% {left: -1000px;}
+            100%{left:0;}
+        }
+        .__formularios{
+            width:80vw;
+        }
+
+        .user {
+            margin-top: 10%;
+            margin-left: 50px;
+        }
+        
+        .user-content {
+            display: flex;
+        }
+        
+        .user-avatar {
+            margin: 0% 0% 0% 5%;
+            padding: 0%;
+            width: 300px;
+            height: 300px;
+            background-image: url("../img/marco_fotoPerfil-01.svg");
+            background-repeat: no-repeat;
+        }
+        
+        .user-avatar > img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            position: relative;
+            left: 3%;
+            top: 14%;
+            z-index: -1;
+        }
+        
+        .user-details {
+            margin: 2% 0% 1% 0%;
+        }
+        
+        .user-details > h1 {
+            margin: 3% 0% 3% 0%;
+            font-size: 3.5em;
+        }
+        
+        .user-motto {
+            position: relative;
+            margin: 0%;
+            left: -10%;
+            min-width: 450px;
+            min-height: 20px;
+            align-self: center;
+            background: black;
+            color: white;
+            font-size: 1.5em;
+            padding: 0.1em 0.5em 0.1em 2em;
+            text-align: center;
+            vertical-align: 50%;
+            border-radius: 0px 4px 4px 0px;
+            text-align: left;
+            outline: none;
+        }
+        
+        .data {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "icons details";
+            margin: 2%;
+        }
+        
+        .icons {
+            margin: 0%;
+            grid-area: icons;
+            list-style: none;
+            justify-content: center;
+        }
+        
+        .icons > li {
+            color: white;
+            background: black;
+            margin: 15px 10px 10px 10px;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            width: 40%;
+        }
+        
+        .icons a {
+            text-decoration: none;
+            color: white;
+            outline: none;
+        }
+        
+        .icons > li img {
+            width: 20px;
+        }
+        
+        .details {
+            margin: 0%;
+            grid-area: details;
+            list-style: none;
+            padding-right: 45px;
+        }
+        
+        .details > li {
+            margin: 8px;
+            text-align: right;
+            font-weight: bold;
+            font-size: 1em;
+            color: #ffc03d;
+        }
+        
+        .caja-productos{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0%;
+        }
+        .productos-perfil{
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .producto-individual{
+            width: 90vw;
+            margin-top: 5%;
+            background-color: rgba(0,0,0,0.06);
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+        }
+        .carousel-inner{
+            border: 3px solid black !important;
+        }
+        .producto{
+            width: 100%;
+            flex-direction:row;
+            justify-content: center;
+        }
+        .imagen-producto{
+            width: 100%;
+        }
+        .boton
+        {
+            width: 40%;
+            z-index: 10;
+            position: relative;
+            top: -58px;
+            right: -34%;
+        }
+        img.solicitar {
+            width: 100%;
+        }
+        .info {
+            width: 100%;
+            margin-top: -25%;
+            padding: 4%;
+        }
+        .nombre-producto{
+            font-family: Wrestlemania;
+            font-size: 3em;
+            line-height: 0.7;
+            text-transform: lowercase;
+        }
+        
+        .categorias{
+            display: flex;
+            flex-direction: row;
+        }
+        .nombre-categoria{
+            font-family: Frutiger;
+            font-size: 1.5em;
+            font-weight: bolder;
+        }
+        .nombre-subcategoria{
+            font-family: Frutiger;
+        }
+        .descripcion-producto{
+            font-family: Frutiger;
+        }
+        .edicion a{
+            text-decoration: none;
+        }
+        .edicion{
+            display: flex;
+            flex-direction: row;
+            margin: 2%;
+        }
+       
+        .ver-fotos{
+            font-size: 1em;
+            font-family: Frutiger;
+            color:grey;
+        }
+        
+    /*     A los productos de los usuarios  */
+        .producto-perfil {
+            width: 30vw;
+            margin-top: 5%;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+        }
+        
+    /* Crear multimedia */
+        .container-multimedia{
+            width: 90vw;
+            display:flex;
+            flex-direction: column;
+        }
+        .edicion-imagenes{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+        .imagenes-cargadas{
+            margin:0;
+        }
+        .img>img{
+            height: 150px;
+            width: 150px;
+            display: flex;
+            justify-content: center;
+        }
+        .img{
+            text-align: center;
+        }
+        .conjunto-imagenes{
+            width: 90vw;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .__boton{
+            margin:20px auto;
+        }
+        .load-img{
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            margin: 5% auto;
+        }
+        .__files{
+            font-size: .8em!important;
+            font-family: Frutiger;
+        }
+        .__nuevasImagenes{
+            font-family: Wrestlemania;
+            font-size: 4em;
+            line-height: .7em;
+        }
+        
+        .__formulario{
+            margin: 0;
+            width:80vw;
+        }
+
+        .boton-eliminar{
+            font-family: Frutiger !important;
+        }
+        /* -----------------------MEDIAQUERIES---------------------- */
+    @media (min-width: 451px) and (max-width: 599px) {
+        .caja-productos{
+            margin:0;
+        }
+        .producto-individual{
+            box-shadow: none;
+        }
+        .nombre-producto{
+            font-family: Wrestlemania;
+            font-size: 4em;
+            line-height: 0.7;
+            text-transform: lowercase;
+        }
+        .nombre-categoria{
+            font-family: Frutiger;
+            font-size: 1.8em;
+        }
+        .nombre-subcategoria{
+            font-family: Frutiger;
+            font-size: 1.8em;
+        }
+        .descripcion-producto{
+            font-family: Frutiger;
+            font-size: 1.5em;
+        }
+        a{
+            text-decoration: none !important;
+        }
+        .edicion{
+            display: flex;
+            flex-direction: row;
+        }
+        .ver-fotos{
+            font-size: 1.2em;
+            font-family: Frutiger;
+            color:grey;
+        }
+        .boton{
+            width:30%;
+        }
+        .caja-productos{
+            width: 80%;
+            padding: 0;
+        }
+        .producto{
+            width: 100%;
+        }
+        .imagen-producto{
+            width: 100%;
+            height: 100%;
+        }
+        .info{
+            margin-top:-20%;
+            padding:4%;
+        }
     }
-}
-
-.user {
-    margin-top: 10%;
-    margin-left: 50px;
-}
-
-.user-content {
-    display: flex;
-}
-
-.user-avatar {
-    margin: 0% 0% 0% 5%;
-    padding: 0%;
-    width: 300px;
-    height: 300px;
-    background-image: url("../img/marco_fotoPerfil-01.svg");
-    background-repeat: no-repeat;
-}
-
-.user-avatar > img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    position: relative;
-    left: 3%;
-    top: 14%;
-    z-index: -1;
-}
-
-.user-details {
-    margin: 2% 0% 1% 0%;
-}
-
-.user-details > h1 {
-    margin: 3% 0% 3% 0%;
-    font-size: 3.5em;
-}
-
-.user-motto {
-    position: relative;
-    margin: 0%;
-    left: -10%;
-    min-width: 450px;
-    min-height: 20px;
-    align-self: center;
-    background: black;
-    color: white;
-    font-size: 1.5em;
-    padding: 0.1em 0.5em 0.1em 2em;
-    text-align: center;
-    vertical-align: 50%;
-    border-radius: 0px 4px 4px 0px;
-    text-align: left;
-    outline: none;
-}
-
-.data {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "icons details";
-    margin: 2%;
-}
-
-.icons {
-    margin: 0%;
-    grid-area: icons;
-    list-style: none;
-    justify-content: center;
-}
-
-.icons > li {
-    color: white;
-    background: black;
-    margin: 15px 10px 10px 10px;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
-    width: 40%;
-}
-
-.icons a {
-    text-decoration: none;
-    color: white;
-    outline: none;
-}
-
-.icons > li img {
-    width: 20px;
-}
-
-.details {
-    margin: 0%;
-    grid-area: details;
-    list-style: none;
-    padding-right: 45px;
-}
-
-.details > li {
-    margin: 8px;
-    text-align: right;
-    font-weight: bold;
-    font-size: 1em;
-    color: #ffc03d;
-}
-
-.caja-productos {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-.productos-perfil {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.producto-individual {
-    width: 30vh;
-    margin: 3% 3%;
-}
-
-.imagen-producto {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.nombre-categoria {
-    font-family: Wrestlemania;
-    font-size: 3em;
-    line-height: 0.7;
-}
-.nombre-subcategoria {
-    font-family: Frutiger;
-}
-.nombre-producto {
-    font-family: Frutiger;
-}
-.ver-fotos {
-    font-family: Frutiger;
-}
-
-img.solicitar {
-    z-index: 10;
-    width: 15vh;
-    margin-inline-start: 17vh;
-    margin-top: -7vh;
-}
-
-/* -----------------------MEDIAQUERIES---------------------- */
-
-@media (min-width: 451px) and (max-width: 767px) {
-    .user-content {
-        flex-direction: column;
+    @media (min-width: 600px)  and (max-width: 767px){
+        .caja-productos{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0%;
+           
+        }
+        .productos-perfil{
+            width: 90vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .producto-individual{
+            width: 40vw;
+            margin-top:3%;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(0,0,0,0.03);
+            box-shadow: none;
+        }
+        .producto-individual:hover{
+            box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
+        }
+        .producto{
+            width: 100%;
+            height: 200px;
+            flex-direction:row;
+            justify-content: center;
+        }
+        .imagen-producto{
+            width: 100%;
+            height: 100%;
+        }
+        .info{
+            padding: 0 4%;
+        }
+        .categorias{
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+        }
+        .nombre-producto{
+            height: 60px;
+            margin: 0;
+            text-transform: lowercase;
+        }
+        .nombre-categoria {
+            font-family: Frutiger;
+            font-size: 1.5em;
+            margin: 0;
+            font-weight: bolder;
+        }
+        .nombre-subcategoria {
+            font-family: Frutiger;
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .descripcion-producto{
+            height: 50px;
+            overflow-y: scroll;
+            
+        }
+        .edicion{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between; 
+            width: 100%;
+            margin:0;
+        }
+        .edicion a {
+            text-decoration: none;
+        }
+        .edicion h5{
+            font-size: 0.7em;
+        }
+        .edicion h5:hover{
+            color: red;
+        }
+        
     }
-    .user-motto {
-        width: 100%;
+    @media (min-width: 768px) and (max-width: 979px) {
+        .caja-productos{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0%;
+           
+        }
+        .productos-perfil{
+            width: 90vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .producto-individual{
+            width: 25vw;
+            margin-top: 2%;
+            background-color: rgba(0,0,0,0.03);
+            box-shadow: none;
+        }
+        .producto-individual:hover{
+            box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
+        }
+        .producto{
+            width: 100%;
+            flex-direction:row;
+            justify-content: center;
+            
+        }
+        .imagen-producto{
+            width: 100%;
+        }
+        .nombre-producto{
+            font-family: Wrestlemania;
+            font-size: 2em;
+            line-height: 0.7;
+            height: 35px;
+            margin: 0;
+            text-transform: lowercase;
+        }
+        .categorias{
+            display: flex;
+            flex-direction: row;
+            margin:0;
+        }
+        .nombre-categoria{
+            font-family: Frutiger;
+            font-size: 1.2em;
+            margin-left: 0;
+            font-weight: bolder;
+            margin-right: 1%;
+        }
+        .nombre-subcategoria{
+            font-family: Frutiger;
+            font-size: 1.2em;
+            margin-left: 0;
+        }
+        .descripcion-producto{
+            font-family: Frutiger;
+            font-size: 1em;
+            height: 40px !important;
+            overflow-y: scroll;
+        }
+        .caja-productos{
+            width: 80%;
+            padding: 0;
+        }
+        .producto{
+            width: 100%;
+            height: 150px;
+        }
+        .imagen-producto{
+            width: 100%;
+            height: 100%;
+        }
+        .info{
+            padding:0 4%;
+        }
+        .descripcion-producto{
+            height: 80px;
+            
+        }
+        .edicion{
+            width: 100%;
+            margin-bottom: 5%;
+           
+        }
+        .edicion a {
+            text-decoration: none;
+        }
+        .edicion h5{
+            font-size: 0.7em;
+        }
+        .edicion h5:hover{
+            color: red;
+        }
     }
-}
+    @media screen and (min-width: 980px){
+       
+        .caja-productos{
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0%;
+        }
+        .productos-perfil{
+            width: 90vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-top: 6%;
+     
+        }
+        .producto-individual{
+            width: 25vw;
+            margin: 0;
+            margin-bottom: 3%;
+            background-color: rgba(0,0,0,0.03);
+            box-shadow: none;
+            margin-top: 6%;
+        }
+        .producto-individual:hover{
+            box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
+        }
+        .producto{
+            width: 100%;
+            height: 250px;
+            flex-direction:row;
+            justify-content: center;
+        }
+        .imagen-producto{
+            width: 100%;
+            height: 100%;
+        }
+        .nombre-producto{
+            font-family: Wrestlemania;
+            font-size: 3em;
+            line-height: 0.7;
+            height:60px;
+            margin:0;
+            text-transform: lowercase;
+        }
+        .categorias{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 3%;
+        }
+        .nombre-categoria{
+            font-family: Frutiger;
+            font-size: 1.8em;
+            margin-left: 0;
+            margin-right: 1%;
+            font-weight: bold;
+        }
+        .nombre-subcategoria{
+            font-family: Frutiger;
+            font-size: 1.8em;
+            margin-left: 0;
+        }
+        .descripcion-producto {
+            font-family: Frutiger;
+            font-size: 1.3em;
+            height: 60px;
+            overflow-y: scroll;
+        }
+        
+        .info{
+            padding:4%;
+        }
+        .edicion {
+            display: flex;
+            flex-direction: row;
+            margin: 3%;
+        }
+        .edicion a {
+            text-decoration: none;
+        }
+        .edicion h5:hover{
+            color: red;
+        }
 
-/* @media (min-width: 768px) and (max-width: 979px) {
-    .card {
-        width: 50vw;
-        margin-top: 20%;
-        margin-bottom: 5%;
     }
-}
-
-@media screen and (min-width: 980px) {
-    .card {
-        margin-top: 15%;
-        margin-bottom: 5%;
-        width: 30vw;
-        border: 2px solid #ccc;
-        border-radius: 0.5em;
-    }
-} */

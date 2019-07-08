@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
             <label for="descripcion">Descripción del producto</label>
-            <input type="text" name="description" value="{{ old("description") }}" class="form-control">
+            <input type="text" name="description" value="{{ old("description") }}" class="form-control" maxlength="190">
         </div>
     
         <div class="form-group">

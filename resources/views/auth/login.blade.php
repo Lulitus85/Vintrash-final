@@ -9,7 +9,7 @@
   
     <h1>Inicio sesion!</h1>   
 
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('login') }}" class="formulario-login">
     @csrf
     <input class="inputLogin" id="email" type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
       @error('email')

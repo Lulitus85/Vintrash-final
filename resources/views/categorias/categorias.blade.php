@@ -44,7 +44,7 @@
 @endforeach
 
 @foreach($categorias as $categoria)
-    @if($categoria->name === "Others")
+    @if($categoria->name === "Other")
     <a class="comon" href="categorias/{{$categoria->id}}">
         <article class="art art5">
         </article>

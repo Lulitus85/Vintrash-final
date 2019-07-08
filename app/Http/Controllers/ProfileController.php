@@ -23,7 +23,7 @@ class ProfileController extends Controller
         
         return view('perfil.index')
         ->with('user', Auth::user())
-        ->with('products', Product::where('user_id', Auth::user()->id)->get());
+        ->with('productos', Product::where('user_id', Auth::user()->id)->get());
         
     }
 

@@ -63,7 +63,7 @@ class ProductController extends Controller
             'el :attribute es obligatorio'
         ];
 
-        $this->validate($request, $reglas, $mensaje);
+        $this->validate($request, $reglas, $mensaje);        
 
         $cover = $request->file('cover')->store('covers','public');
 
@@ -92,12 +92,15 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {           
-        $product = Product::find($id); // fetch product from database
+    {   
+        $multimedias = Multimedia::all();
+        $product = Product::find($id); 
         if(Auth::user() == null || $product->user_id != Auth::user()->id){
-        $product->increment('hits'); // add a new page view to our `views` column by incrementing it
+        $product->increment('hits'); 
         }
-        return view('productos.show')->with('product', $product);
+        return view('productos.show')
+        ->with('producto', $product)
+        ->with('multimedias',$multimedias);
     }
 
     /**
@@ -106,10 +109,20 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+            $producto = Product::find($id);
+            $categorias = Category::all();
+            $subcategorias = Subcategory::all();
+            $photos = Multimedia::all();
+
+            return view('productos.editar')
+                ->with('producto', $producto)
+                ->with('categorias', $categorias)
+                ->with('subcategorias', $subcategorias)
+                ->with('photos', $photos);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -118,9 +131,45 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $reglas = [
+            'name'=>'required',
+            'description'=>'required',
+            'category_id'=>'required',
+            'subcategory_id' => 'required',
+        ];
+
+        $mensaje = [
+            'required' => 'el campo :attribute es obligatorio'
+        ];
+
+        $this->validate($request, $reglas, $mensaje);
+
+        $producto = Product::find($id);
+
+         $producto->name = $request->input('name') !== $producto->name ? $request->input('name') : $producto->name;
+
+         $producto->description = $request->input('description') !== $producto->description ? $request->input('description') : $producto->description;
+         $producto->category_id = $request->input('category_id') !== $producto->category_id ? $request->input('category_id') : $producto->category_id;
+         $producto->subcategory_id = $request->input('subcategory_id') !== $producto->subcategory_id ? $request->input('subcategory_id') : $producto->subcategory_id;
+
+         /* if($request->input('cover') !== null){
+            $cover = $request->file('cover')->store('covers','public');
+            $producto->cover = $cover;
+            $producto->save();
+            return redirect("/productos/usuario");
+         } ---> ASÍ LO HABIAMOS HECHO. ES UN INPUT PERO HAY QUE LLAMARLO COMO FILE.*/
+
+         if($request->file('cover') !== null){
+            $cover = $request->file('cover')->store('covers','public');
+            $producto->cover = $cover;
+         }
+         
+         $producto->save();
+
+         return redirect("/productos/usuario");
+
     }
 
     /**

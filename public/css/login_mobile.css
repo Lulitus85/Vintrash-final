@@ -74,7 +74,7 @@ html::-webkit-scrollbar-thumb {
     padding: 1.5%;
 }
 
-form {
+.formulario-login {
     /*   height: 100%; */
     width: 80%;
     display: flex;
@@ -82,14 +82,14 @@ form {
     justify-content: space-evenly;
 }
 
-form .inputLogin {
+.formulario-login .inputLogin {
     padding: 0.4em;
     border-radius: 0.5em;
     border: 1px solid black;
     outline: none;
 }
 
-form input::placeholder {
+.formulario-login input::placeholder {
     font-size: 1em;
 }
 
@@ -98,7 +98,7 @@ input:focus::-webkit-input-placeholder {
     transition: 400ms;
 }
 
-form a {
+.formulario-login a {
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: underline;
     text-align: left;
@@ -108,7 +108,7 @@ form a {
     margin: 0.5em;
 }
 
-form p {
+.formulario-login p {
     display: flex;
     margin-right: 1.5em;
     text-align: left;
@@ -122,7 +122,7 @@ form p {
     margin: 0 0 0 1.5em;
 }
 
-form .submitLogin {
+.formulario-login .submitLogin {
     text-align: center;
     font-family: "Wrestlemania", Arial, Helvetica, sans-serif;
     color: white;
