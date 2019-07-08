@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('content')
-
 <section class="user">
     <article class="user-content">        
         <div class="user-avatar">
@@ -8,7 +7,7 @@
         </div>
         <div class="user-details">
             <h1>{{$user->name}}</h1>
-            <p class="user-motto" contenteditable="true">"Do or do not, there is no try" (Yoda)</p>
+            <p class="user-motto" contenteditable="true">"Insertar frase chistosa"</p>
         <div class="data">
             <ul class="icons">
             <li><img src="{{asset("img/admiration_marc-01.svg")}}" alt=""></li>
@@ -26,32 +25,19 @@
         </div>
     </article>
 </section>
-    <div class="caja-productos">
+    <div class="caja-productos">        
         <section class="productos-perfil">    
+            @foreach($products as $product)            
             <article class="producto-individual">
-                <img class="imagen-producto" src="img/productimages/5cec1f0f6f3b7.jpg" alt="imagen de producto">
+                <img class="imagen-producto" src="{{url('/storage/'. $product->cover)}}" alt="imagen de producto">
                 <a href="#"><img class="solicitar" src="img/solicitar_-01.svg" alt="solicitar"></a>
-                <h4 class="nombre-categoria">Lectura </h4>
-                <h5 class="nombre-subcategoria">Subcategoria: </h5>
-                <h5 class="nombre-producto">Producto: </h5>
+                <h4 class="nombre-categoria">{{$product->categoria->name}} </h4>
+                <h5 class="nombre-subcategoria">{{$product->subcategoria->name}}</h5>
+                <h5 class="nombre-producto">{{$product->name}} </h5>
                 <a href="#"><h5 class="ver-fotos">VER FOTOS</h5></a>
             </article>
-            <article class="producto-individual">
-                    <img class="imagen-producto" src="img/productimages/5cec1f0f6f3b7.jpg" alt="imagen de producto">
-                    <a href="#"><img class="solicitar" src="img/solicitar_-01.svg" alt="solicitar"></a>
-                    <h4 class="nombre-categoria">Lectura </h4>
-                    <h5 class="nombre-subcategoria">Subcategoria: </h5>
-                    <h5 class="nombre-producto">Producto: </h5>
-                    <a href="#"><h5 class="ver-fotos">VER FOTOS</h5></a>
-                </article>
-                <article class="producto-individual">
-                        <img class="imagen-producto" src="img/productimages/5cec1f0f6f3b7.jpg" alt="imagen de producto">
-                        <a href="#"><img class="solicitar" src="img/solicitar_-01.svg" alt="solicitar"></a>
-                        <h4 class="nombre-categoria">Lectura </h4>
-                        <h5 class="nombre-subcategoria">Subcategoria: </h5>
-                        <h5 class="nombre-producto">Producto: </h5>
-                        <a href="#"><h5 class="ver-fotos">VER FOTOS</h5></a>
-                    </article>    
+            @endforeach
+                  
         </section>
     </div>
 

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use Illuminate\Foundation\Auth\User;
 use Auth;
+
 
 class ProfileController extends Controller
 {
@@ -17,7 +20,11 @@ class ProfileController extends Controller
         if(Auth::user() == null){
             return redirect('login');
         }
-        return view('perfil.index', ['user' => Auth::user()]);
+        
+        return view('perfil.index')
+        ->with('user', Auth::user())
+        ->with('products', Product::where('user_id', Auth::user()->id)->get());
+        
     }
 
     /**
