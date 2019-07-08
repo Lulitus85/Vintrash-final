@@ -73,7 +73,7 @@ class ProductController extends Controller
 
         $producto->save();
 
-        return redirect('/categorias');
+        return redirect('/profile');
     }
 
     public function showProducts()
@@ -168,7 +168,7 @@ class ProductController extends Controller
          
          $producto->save();
 
-         return redirect("/productos/usuario");
+         return redirect("/profile");
 
     }
 
@@ -178,8 +178,10 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
-    {
-        //
-    }
+    public function destroy($id)
+   {
+       $producto=Product::find($id);
+       $producto->delete();
+       return redirect("/profile");
+   }
 }

@@ -10,7 +10,7 @@
 </div>
 @endif
 <br>
-<div class="offset-3 col-6">
+<div class="offset-3 col-6" style="margin-top:7%;">
     <h1 class="text-center">Agregar Producto</h1>
     <form class="form-group" action="" method="post" enctype="multipart/form-data">
         @csrf
@@ -68,8 +68,8 @@
         </div>
 
         <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Agregar Película" id="addMovie">
+            <input type="submit" class="btn btn-primary" value="Agregar Producto" id="addMovie">
         </div>
     </form>
-
+</div>
 @endsection

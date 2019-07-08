@@ -33,7 +33,7 @@
 
             <div class="edicion">
 
-                <a href="#" id="abrir">
+            <a href="../productos/{{$producto->id}}" id="abrir">
                     <h5 class="ver-fotos">VER</h5>
                     <div id="miModal" class="modalito">
                         <div id="flex" class="flex">

@@ -141,7 +141,7 @@
         <h5 class="ver-fotos">CARGAR FOTOS</h5>
     </a> --}}
 
-    <a href="{{$producto->id}}/editar" id="abrir">
+    <a href="productos/editar/{{$producto->id}}" id="abrir">
         <h5 class="ver-fotos">EDITAR</h5>
     </a>
     {{-- @endif --}}
