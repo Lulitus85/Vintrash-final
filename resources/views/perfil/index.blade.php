@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <section class="user">
-    <article class="user-content">        
+    <article class="user-content">
         <div class="user-avatar">
         <img src="{{url('/storage/avatars/'. $user->avatar)}}" alt="foto usuario">
         </div>
