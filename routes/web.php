@@ -57,3 +57,4 @@ Route::get('/productos/usuario/cargar_imagen/{id}','MultimediaController@create'
 Route::post('/productos/usuario/cargar_imagen/{id}','MultimediaController@store');
 Route::get('/{id}/editar', 'MultimediaController@edit'); 
 Route::patch('/{id}/editar', 'MultimediaController@update'); 
+Route::delete('/productos/usuario/cargar_imagen/{id}','MultimediaController@destroy');

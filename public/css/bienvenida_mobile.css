@@ -186,6 +186,79 @@ src: url(../Fonts/frutiger/FrutigerLTStd-Cn.otf);
     }
 
 
+/*     A los productos de los usuarios  */
+
+    .producto-perfil {
+        width: 30vw;
+        margin-top: 5%;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+    }
+    
+/* Crear multimedia */
+
+    .container-multimedia{
+        width: 90vw;
+        display:flex;
+        flex-direction: column;
+    }
+
+    .edicion-imagenes{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+        flex-wrap: wrap;
+    }
+
+    .imagenes-cargadas{
+        margin:0;
+    }
+
+    .img>img{
+        height: 150px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .img{
+        text-align: center;
+    }
+
+    .conjunto-imagenes{
+        width: 90vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .__boton{
+        margin:20px auto;
+    }
+
+    .load-img{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 5% auto;
+    }
+
+    .__files{
+        font-size: .8em!important;
+        font-family: Frutiger;
+    }
+
+    .__nuevasImagenes{
+        font-family: Wrestlemania;
+        font-size: 4em;
+        line-height: .7em;
+    }
+    
+    .__formulario{
+        margin: 0;
+    }
+
     /* -----------------------MEDIAQUERIES---------------------- */
 
 

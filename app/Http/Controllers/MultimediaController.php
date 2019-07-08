@@ -92,8 +92,9 @@ class MultimediaController extends Controller
      * @param  \App\Multimedia  $multimedia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Multimedia $multimedia)
+    public function destroy($id)
     {
-        //
+        Multimedia::destroy($id);
+        return redirect("/productos/usuario");
     }
 }

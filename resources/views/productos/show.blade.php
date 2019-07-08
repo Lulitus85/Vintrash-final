@@ -3,11 +3,9 @@
 @section('content')
 
 
-
-<div class="caja-productos offset-4 col-2">
-
-        <section class="productos-perfil">
-            <article class="producto-individual">
+<div class="">
+        <section class="">
+            <article class="producto-perfil">
                 <div class="producto">
                     <img class="imagen-producto" src="/storage/{{$producto->cover}}" style="border: 3px solid black; border-radius:3px;" alt="imagen de producto">
                 </div>
@@ -35,7 +33,7 @@
             
         <a href="#">
            
-            <h5 class="ver-fotos"  id="abrir" style="color:red;">VER MÁS!</h5>
+            <h5 class="ver-fotos"  id="abrir" style="color:red;">VER FOTOS</h5>
           </a>
           
             <div id="miModal" class="modalito">
@@ -80,4 +78,3 @@
     </div>
 
 @endsection
-

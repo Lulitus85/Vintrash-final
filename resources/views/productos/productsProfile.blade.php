@@ -71,21 +71,25 @@
           <img class="imagen-producto" src="/storage/{{$producto->cover}}" alt="imagen de producto">
 </div> --}}
 
-{{-- @if($producto->user_id != Auth::user()->id)  -->PARA QUE NO SE VEA EL SOLICITAR SI SOS EL DUEÑO DEL PERFIL --}}
-<div class="boton">
-    <a href="#"><img class="solicitar" src="/img/solicitar_-01.svg" alt="solicitar"></a>
-</div>
-{{-- @endif --}}
-<div class="info">
-    <h4 class="nombre-producto"> {{$producto->name}} </h4>
-    <div class="categorias">
-        <h5 class="nombre-categoria"> {{$producto->categoria->name}}</h5>
-        @if($producto->subcategory_id != null)
-        <h5 class="nombre-subcategoria"> | {{$producto->subcategoria->name}} </h5>
-        @endif
-    </div>
-    {{-- <h6 class="descripcion-producto"> {{$producto->description}} </h6> --}}
-</div>
+
+
+    @if($producto->user_id == Auth::user()->id)
+
+        <div class="boton" style="display:none">
+            <a href="#"><img class="solicitar" src="/img/solicitar_-01.svg" alt="solicitar"></a>
+        </div>
+    
+        <div class="info" style="margin-top:0%">
+            <h4 class="nombre-producto"> {{$producto->name}} </h4>
+            <div class="categorias">
+                <h5 class="nombre-categoria"> {{$producto->categoria->name}}</h5>
+                @if($producto->subcategory_id != null)
+                <h5 class="nombre-subcategoria"> | {{$producto->subcategoria->name}} </h5>
+                @endif
+            </div>
+            {{-- <h6 class="descripcion-producto"> {{$producto->description}} </h6> --}}
+        </div>
+    @endif
 
 <div class="edicion">
 
@@ -112,9 +116,9 @@
         </div> --}}
         {{-- @if($producto->user_id == Auth::user()->id)  -->PARA QUE NO SE VEA EL CARGAR Y ELIMINAS SI NO EL DUEÑO DEL PERFIL --}}
     </a>
-    <a href="/productos/usuario/cargar_imagen/{{$producto->id}}">
-        <h5 class="ver-fotos">CARGAR</h5>
-    </a>
+{{--     <a href="/productos/usuario/cargar_imagen/{{$producto->id}}">
+        <h5 class="ver-fotos">CARGAR FOTOS</h5>
+    </a> --}}
 
     <a href="{{$producto->id}}/editar" id="abrir">
         <h5 class="ver-fotos">EDITAR</h5>
