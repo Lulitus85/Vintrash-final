@@ -76,7 +76,7 @@ body {
 .user-motto {
     position: relative;
     margin: 0%;
-    left: -9%;
+    left: -10%;
     min-width: 450px;
     min-height: 20px;
     align-self: center;
@@ -88,6 +88,7 @@ body {
     vertical-align: 50%;
     border-radius: 0px 4px 4px 0px;
     text-align: left;
+    outline: none;
 }
 
 .data {
