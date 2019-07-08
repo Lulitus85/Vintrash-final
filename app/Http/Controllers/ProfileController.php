@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class ProfileController extends Controller
 {
@@ -12,8 +13,11 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('perfil.index');
+    {   
+        if(Auth::user() == null){
+            return redirect('login');
+        }
+        return view('perfil.index', ['user' => Auth::user()]);
     }
 
     /**

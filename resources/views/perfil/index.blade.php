@@ -4,10 +4,10 @@
 <section class="user">
     <article class="user-content">        
         <div class="user-avatar">
-            <img src="{{asset("img/userimg/raven.jpg")}}" alt="foto usuario">
+        <img src="{{url('/storage/avatars/'. $user->avatar)}}" alt="foto usuario">
         </div>
         <div class="user-details">
-            <h1>Fak</h1>
+            <h1>{{$user->name}}</h1>
             <p class="user-motto" contenteditable="true">"Do or do not, there is no try" (Yoda)</p>
         <div class="data">
             <ul class="icons">

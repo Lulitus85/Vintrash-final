@@ -8,6 +8,7 @@ Use App\Category; //recordemos son solo 4, hot stuff es por hits.
 Use App\Subcategory;
 Use App\Multimedia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -27,7 +28,10 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
+        if(Auth::user() == null){
+        return redirect('login');
+    }
         $categorias=Category::all();
         $subcategorias=Subcategory::all();
         return view('productos.create')
