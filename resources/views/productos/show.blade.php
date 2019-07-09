@@ -12,7 +12,12 @@
 <div class="boton">
 <a href="#"><img class="solicitar" src="/img/solicitar_-01.svg" alt="solicitar"></a>
 </div>
+@elseif(Auth::user()->id != $producto->user_id)
+<div class="boton">
+    <a href="#"><img class="solicitar" src="/img/solicitar_-01.svg" alt="solicitar"></a>
+</div>
 @endif
+
 
 <div class="info" style="margin-top:0%">
 <h4 class="nombre-producto"> {{$producto->name}} </h4>
@@ -51,6 +56,7 @@
 
 </a>
 @if(Auth::user() != null)
+@if(Auth::user()->id == $producto->user_id)
 <a href="/productos/usuario/cargar_imagen/{{$producto->id}}">
 <h5 class="ver-fotos">CARGAR IMAGENES</h5>
 </a>
@@ -59,7 +65,7 @@
 <h5 class="ver-fotos">EDITAR PRODUCTO</h5>
 </a>
 @endif
-
+@endif
 </div>
 
 </article>

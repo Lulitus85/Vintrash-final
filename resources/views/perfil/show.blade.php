@@ -9,6 +9,8 @@
         <div class="user-details">
             <h1>{{$user->name}}</h1>
             <p class="user-motto" contenteditable="true">"Insertar frase chistosa"</p>
+        @if(Auth::user() != null)
+        @if(Auth::user()->id == $user->id)
         <div class="data">
             <ul class="icons">
             <li><img src="{{asset("img/admiration_marc-01.svg")}}" alt=""></li>
@@ -23,6 +25,8 @@
                 <li>Ventas 0</li>
             </ul>
         </div>
+        @endif
+        @endif
         </div>
     </article>
 </section>
