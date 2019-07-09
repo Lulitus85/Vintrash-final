@@ -70,8 +70,8 @@ html::-webkit-scrollbar-thumb {
     border-radius: 5px;
 }
 
-.formularioRegister{
-    width:90%;
+.formularioRegister {
+    width: 90%;
 }
 
 @keyframes modal {

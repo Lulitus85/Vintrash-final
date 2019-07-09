@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 @extends('layouts.master')
-=======
-@extends('master')
->>>>>>> d6ae6076a9d0f89606d84ff688257c769ca6b5ca
 
 @section('content')
 

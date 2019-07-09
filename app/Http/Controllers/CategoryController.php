@@ -19,7 +19,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categorias = Category::all();
-        return view('categorias.categorias')
+        return view('categorias.index')
                     ->with('categorias',$categorias);
     }
 
@@ -36,7 +36,7 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request 
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -61,7 +61,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Category 
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -75,37 +75,9 @@ class CategoryController extends Controller
                 ->with('multimedias',$multimedias);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Category $category)
+    public function hotStuff()
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Category $category)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Category $category)
-    {
-        //
+        $products = Product::where('hits', '>', 3)->get();
+        return view('categorias.hotstuff')->with('products', $products);
     }
 }

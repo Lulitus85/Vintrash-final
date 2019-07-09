@@ -51,13 +51,13 @@
         <span class="errors"> {{ $message }}</span>
         @enderror
 
-        <input class="inputForm" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder = 'Password' required autocomplete="new-password">
+        <input class="inputForm" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder = 'Password' autocomplete="new-password">
         
         @error('password')
         <span class="errors"> {{ $message }}</span>
         @enderror
         
-        <input class="inputForm" id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder = 'Confirma la password' required autocomplete="new-password">
+        <input class="inputForm" id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder = 'Confirma la password' autocomplete="new-password">
         @error('password')
         <span class="errors"> {{ $message }}</span>
         @enderror

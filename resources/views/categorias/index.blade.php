@@ -28,7 +28,7 @@
     @endif
 @endforeach
 
-      <a class="hotstuff" href="categorias/hot_stuff">
+      <a class="hotstuff" href="categorias/hotstuff">
         <article class="art art3">
          
         </article>

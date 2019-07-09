@@ -26,28 +26,6 @@ class ProfileController extends Controller
         ->with('productos', Product::where('user_id', Auth::user()->id)->get());
         
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
     /**
      * Display the specified resource.
      *
@@ -56,7 +34,10 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('perfil.show')
+        ->with("user", User::find($id))
+        ->with('productos', Product::where('user_id', User::find($id)->id)->get());
+        
     }
 
     /**

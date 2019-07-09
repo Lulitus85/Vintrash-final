@@ -3,7 +3,7 @@ use App\Http\Controllers\Auth\RegisterController;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
+
 
 
 Route::get('/faq', 'FaqController@index');
@@ -12,16 +12,19 @@ Route::get('/faq', 'FaqController@index');
 Route::group(['prefix'=>'profile'], function(){
     
     Route::get('/', 'ProfileController@index'); // Route::get('/{id}', 'UserController@showProducts');
-    Route::get('/{id}', 'ProfileController@index');
+    Route::get('/{id}', 'ProfileController@show');
 });
 
 //Categorias
+Route::get('/','CategoryController@index');
+
 Route::group(['prefix'=>'categorias'], function(){
 
-    Route::get('/','CategoryController@index'); // home original de productos según mockup (categorias)
     Route::get('/cargar','CategoryController@create'); //va a llevar al formulario de carga de categoria (solo administrador)
     Route::post('/cargar','CategoryController@store'); //va a guardar el categoria en la base de datos (solo administrador)
+    Route::get('/hotstuff', 'CategoryController@hotStuff');
     Route::get('/{id}','CategoryController@show');
+    
 
 });
 
@@ -61,12 +64,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 }); */
 
 //Categorias
-Route::group(['prefix'=>''], function(){
-    Route::get('/','CategoryController@index'); // home original de productos según mockup (categorias)
-    Route::get('/cargar','CategoryController@create'); //va a llevar al formulario de carga de categoria (solo administrador)
-    Route::post('/cargar','CategoryController@store');//va a guardar el categoria en la base de datos (solo administrador)
-    Route::get('/{id}','CategoryController@show');
-});
+
 
 //SubCategorias
 Route::group(['prefix'=>'subcategorias'], function(){
