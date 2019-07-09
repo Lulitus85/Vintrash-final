@@ -16,6 +16,7 @@ Route::group(['prefix'=>'profile'], function(){
 });
 
 //Categorias
+
 Route::get('/','CategoryController@index');
 
 Route::group(['prefix'=>'categorias'], function(){
