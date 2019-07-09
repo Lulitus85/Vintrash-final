@@ -6,7 +6,7 @@
         <section class="">
             <article class="producto-perfil">
                 <div class="producto">
-                    <img class="imagen-producto" src="/storage/{{$producto->cover}}" style="border: 3px solid black; border-radius:3px;" alt="imagen de producto">
+                    <img class="imagen-producto" src="/storage/{{$producto->cover}}" style="border-radius:3px;" alt="imagen de producto">
                 </div>
                 
     

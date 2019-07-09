@@ -70,6 +70,10 @@ html::-webkit-scrollbar-thumb {
     border-radius: 5px;
 }
 
+.formularioRegister{
+    width:90%;
+}
+
 @keyframes modal {
     0% {
         left: -1000px;

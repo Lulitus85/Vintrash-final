@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div style="display:flex; justify-content:center; margin-top:5%; ">
+<div class="producto-editar" style="display:flex; justify-content:center;">
     <div align="left" class="producto-individual" style="padding-bottom:2%">
         <br>
         <h1 align="center" class="__nuevasImagenes">Editar Producto</h1>
