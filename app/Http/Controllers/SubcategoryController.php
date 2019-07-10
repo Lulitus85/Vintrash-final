@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Subcategory;
 use Illuminate\Http\Request;
+use App\Category;
 
 class SubcategoryController extends Controller
 {
@@ -24,7 +25,8 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categorias = Category::all();
+        return view('subcategorias.create')->with('categorias',$categorias);
     }
 
     /**
@@ -35,7 +37,22 @@ class SubcategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reglas = [
+            'name'=>'required',
+            'category_id' => 'required'
+        ];
+
+        $mensaje=[
+            'el campo :attribute es obligatorio'
+        ];
+
+        $this->validate($request, $reglas, $mensaje);
+
+        $subcategoria = new Subcategory($request->all());
+
+        $subcategoria->save();
+
+        return redirect('/subcategorias/cargar');
     }
 
     /**
