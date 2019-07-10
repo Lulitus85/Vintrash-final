@@ -1,8 +1,8 @@
 !public/
-avatars/*
-covers/*
-product/*
-!avatars/.gitkeep
-!covers/.gitkeep
-!product/.gitkeep
+public/avatars/*
+public/covers/*
+public/product/*
+!public/avatars/.gitkeep
+!public/covers/.gitkeep
+!public/product/.gitkeep
 !.gitignore

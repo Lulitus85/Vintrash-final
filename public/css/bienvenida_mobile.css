@@ -137,7 +137,7 @@
             margin: 5% 0;
             grid-area: details;
             list-style: none;
-            padding-right: 15%;
+            padding-right: 0;
         }
         
         .details > li {
@@ -166,6 +166,7 @@
             flex-direction: column;
             justify-content: space-between;
             padding: 0%;
+            margin: 5% 0;
         }
 
         .productos-perfil{
@@ -394,7 +395,8 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-areas: "icons details";
-            margin: 2%;
+            margin: 2% auto;
+            width: 80%;
         }
         
         .icons {
@@ -411,7 +413,7 @@
             text-align: center;
             border-radius: 5px;
             padding: 5px;
-            width: 40%;
+            width: 60%;
         }
         
         .icons a {
@@ -428,7 +430,7 @@
             margin: 0%;
             grid-area: details;
             list-style: none;
-            padding-right: 45px;
+            padding-right: 0;
         }
         
         .details > li {
@@ -645,7 +647,7 @@
             flex-direction: row;
             justify-content: space-between;
             padding: 0%;
-            margin: 0% auto;
+            margin: 5% 0;
         }
 
         .titulo-categoria{
@@ -664,6 +666,9 @@
             margin-bottom:5%;
         }
 
+        .__editar-prod{
+            width: 75% !important;
+        }
         .producto-individual{
             width: 40vw;
             margin-top:3%;
@@ -681,6 +686,12 @@
             flex-direction:row;
             justify-content: center;
         }
+
+        .__editar-img{
+            width:60% !important;
+
+        }
+
         .imagen-producto{
             width: 100%;
             height: 100%;
@@ -882,6 +893,16 @@
             justify-content: space-between;
             align-items: baseline;
         }
+
+        .__editar-prod{
+            width:50% !important;
+        }
+
+        .__editar-img{
+            width:70% !important;
+            height: 250px !important;
+        }
+
         .producto-individual{
             width: 25vw;
             margin-top: 2%;
@@ -1024,6 +1045,7 @@
             grid-template-columns: 1fr 1fr;
             grid-template-areas: "icons details";
             margin: 2%;
+            width: 70%;
         }
         
         .icons {
@@ -1093,6 +1115,7 @@
             flex-direction: row;
             justify-content: space-between;
             padding: 0%;
+            margin: auto;
         }
 
         .titulo-categoria{

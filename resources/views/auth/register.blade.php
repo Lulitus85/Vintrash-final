@@ -19,7 +19,7 @@
         <b>Pero no te desanimes!</b> Si no tienes nada que ofrecer, que
         sea de interés para tu ofertante, el puede subastártelo!
         <br>
-        <b> <i> Bienvenido a VINTRASH, donde el deshecho de uno es
+        <b> <i> Bienvenido a VINTRASH, donde el desecho de uno es
         el tesoro de otro. </i> </b>
       </p>
     </div>
@@ -72,13 +72,13 @@
         @enderror
 
         <p class="ldob" for="DOB">Fecha de Nacimiento</p>
-        <input type="date" name="dob">
+        <input type="date" name="dob" style="margin-top:-10%;">
         
         @error('dob')
         <span class="errors">{{ $message }}</span>
         @enderror
         <br>
-        <button class="submitRegister" type="submit" name="submit">{{ __('Enviar') }}</button>
+        <button class="submitRegister" type="submit" name="submit" style="margin-top:10%;">{{ __('Enviar') }}</button>
       </form>
     </div>
   </main>

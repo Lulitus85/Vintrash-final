@@ -16,5 +16,6 @@
     <link rel="stylesheet" href="{{ asset('css/faq_mobile.css') }}">    
     <link rel="stylesheet" href="{{ asset('css/bienvenida_mobile.css') }}">
     <link rel="stylesheet" href="{{asset('css/categorias_index.css')}}">
+    <link rel="stylesheet" href="{{asset('css/formulariosProd.css')}}">
     <title>Vintrash</title>
 </head>

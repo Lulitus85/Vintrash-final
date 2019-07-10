@@ -10,9 +10,9 @@
 </div>
 @endif
 <br>
-<div class="offset-3 col-6" style="margin-top:7%;">
-    <h1 class="text-center">Agregar Producto</h1>
-    <form class="form-group" action="" method="post" enctype="multipart/form-data">
+<div class="__formularioProd">
+    <h1 class="text-center __createProd">Agregar Producto</h1>
+    <form class="form-group __fuenteForm" action="" method="post" enctype="multipart/form-data">
         @csrf
         <div class=form-group style="display:none;">
             <input type="text" name= "user_id" value="{{Auth::user()->id}}">
@@ -62,13 +62,13 @@
         </select>
         </div>
 
-        <div class="form-group">
-            <label for="poster">Imagen</label>
-            <input class="form-control" type="file" name="cover">
+        <div class="button">
+            <label for="poster" class="add_img">selecionar Imagen</label>
+            <input class="avatar" type="file" name="cover">
         </div>
 
         <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Agregar Producto" id="addMovie">
+            <input type="submit" class="btn btn-primary __agregarProd" value="Agregar Producto" id="addMovie">
         </div>
     </form>
 </div>

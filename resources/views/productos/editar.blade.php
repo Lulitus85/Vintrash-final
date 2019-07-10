@@ -3,7 +3,7 @@
 
 
 <div class="producto-editar" style="display:flex; justify-content:center;">
-    <div align="left" class="producto-individual" style="padding-bottom:2%">
+    <div align="left" class="producto-individual __editar-prod" style="padding-bottom:2%">
         <br>
         <h1 align="center" class="__nuevasImagenes">Editar Producto</h1>
         @if (count($errors) > 0)
@@ -15,7 +15,7 @@
             </ul>
         </div>
         @endif
-        <div class="producto" ">
+        <div class="producto __editar-img">
             <img class="imagen-producto" src="/storage/{{$producto->cover}}" alt="imagen de producto">
         </div>
 
@@ -30,9 +30,9 @@
                 <input name="name" value="{{$producto->name}}" type="text" class="form-control" placeholder="">
             </div>
 
-            <div class="form-group">
+            <div class="button" style="margin-bottom:6%;">
                 <label for="name" class="nombre-categoria"> Cover </label>
-                <input class="form-control" type="file" name="cover" value="{{$producto->cover}}">
+                <input class="add_img" type="file" name="cover" value="{{$producto->cover}}">
             </div>
             <div class="form-group">
                 <label for="description" class="nombre-categoria"><b> Descripción </b></label>
@@ -71,8 +71,8 @@
 
             <br>
             <div class="d-flex md-form mt-0" style="justify-content:center">
-                <a href="/productos/usuario" class="btn btn-info btn-sm boton-eliminar" role="button" style="margin:2%; background-color:blue;">Volver</a>
-                <input type="submit" class="btn btn-info btn-sm boton-eliminar" style="margin:2%; background-color:blue;" value="Confirmar Cambios">
+                <a href="/productos/usuario" class="btn btn-info btn-sm boton-eliminar" role="button" style="margin:2%; background-color:#007BFF;border-color:#007BFF;">Volver</a>
+                <input type="submit" class="btn btn-info btn-sm boton-eliminar" style="margin:2%; background-color:#007BFF;border-color:#007BFF;" value="Confirmar Cambios">
             </div>
         </form>
 
