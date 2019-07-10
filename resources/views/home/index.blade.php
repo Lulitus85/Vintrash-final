@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+
 <main class="caja">
     <div class="container">
         <a href="#"><img src="img/banner_pick_your_treasure.svg" alt=""></a>
@@ -25,5 +26,5 @@
         <h1 class="banner"> BANNER DE PUBLICIDAD </h1>
     </section>
 </main>
+
 @endsection
- 
