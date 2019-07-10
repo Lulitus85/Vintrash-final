@@ -1,0 +1,9 @@
+*
+!public/
+avatars/*
+covers/*
+product/*
+!avatars/.gitkeep
+!covers/.gitkeep
+!product/.gitkeep
+!.gitignore
