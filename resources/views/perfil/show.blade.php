@@ -38,11 +38,13 @@
             <div class="producto">
                 <img class="imagen-producto" src="/storage/{{$producto->cover}}" style="border-radius:3px;" alt="imagen de producto">
             </div>
-    
+        @if(Auth::user() != null)
+        @if(Auth::user()->id != $user->id)
         <div class="boton" ">
             <a href="#"><img class="solicitar" src="{{asset("/img/solicitar_-01.svg")}}" alt="solicitar"></a>
         </div>
-    
+        @endif
+        @endif
         <div class="info" style="margin-top:0%">
             <h4 class="nombre-producto"> {{$producto->name}} </h4>
             <div class="categorias">
@@ -57,12 +59,16 @@
 
 <div class="edicion">
 
-
-   <a href="/productos/{{$producto->id}} ">
+    <a href="/productos/{{$producto->id}} ">
         <h5 class="ver-fotos" style="color:red;">VER MÁS!</h5>
-      </a>
-
     </a>
+    @if(Auth::user() != null)
+        @if(Auth::user()->id == $user->id)
+    <a href="productos/editar/{{$producto->id}}" id="abrir">
+        <h5 class="ver-fotos">EDITAR</h5>
+    </a>
+    @endif
+    @endif
 
 
     
