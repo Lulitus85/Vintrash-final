@@ -1,7 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="caja-productos">    
+
+<div class="caja-productos-categoria">
+    <h1 class="titulo-categoria" style="text-align: center;"> Hot Stuff </h1>
+ 
         <section class="productos-perfil">
             @foreach($products as $producto)            
             <article class="producto-individual">
@@ -45,5 +48,6 @@
     
     @endforeach
     </section>
-    </div>
+    
+</div>
     @endsection
