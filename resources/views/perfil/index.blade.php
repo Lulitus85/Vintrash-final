@@ -13,7 +13,7 @@
             <ul class="icons">
             <li><img src="{{asset("img/admiration_marc-01.svg")}}" alt=""></li>
                 <li>Mensajes</li>
-                <li><a href="/productos/cargar">Agregar producto</a></li>                
+                <li><a href="/productos/cargar" style="color:yellow;">Agregar producto</a></li>                
             </ul>       
             <ul class="details">
                 <li>Ofertas 102</li>
