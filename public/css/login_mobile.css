@@ -52,6 +52,7 @@ html::-webkit-scrollbar-thumb {
     0% {
         left: -1000px;
     }
+
     100% {
         left: 0;
     }
@@ -151,10 +152,12 @@ input:focus::-webkit-input-placeholder {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
 }
+
 /* Fin de animacion boton*/
 
 button:hover {

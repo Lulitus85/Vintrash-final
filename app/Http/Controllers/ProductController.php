@@ -47,43 +47,22 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        
+    {    
         $reglas = [
             'name'=>'required',
-            'description'=>'required',
-            /* 'active'=>'required',
-            'hits'=>'required', */
+            'description'=>'required',            
             'user_id'=>'required',
-            'category_id'=>'required',
-            /* 'subcategory_id'=>'required' */
+            'category_id'=>'required'
         ];
 
-        $mensaje=[
-            'el :attribute es obligatorio'
-        ];
-
-        $this->validate($request, $reglas, $mensaje);        
-
+        $mensaje=['el :attribute es obligatorio'];
+        $this->validate($request, $reglas, $mensaje);
         $cover = $request->file('cover')->store('covers','public');
-
         $producto = new Product($request->all());
-
         $producto->cover = $cover;
-
         $producto->save();
-
         return redirect('/profile');
-    }
-
-    public function showProducts()
-    {
-        $multimedias = Multimedia::all();
-        $products = Product::all();
-        return view('productos.productsProfile')
-                    ->with('productos',$products)
-                    ->with('multimedias',$multimedias);
-    }
+    }    
 
     /**
      * Display the specified resource.
@@ -115,7 +94,6 @@ class ProductController extends Controller
             $categorias = Category::all();
             $subcategorias = Subcategory::all();
             $photos = Multimedia::all();
-
             return view('productos.editar')
                 ->with('producto', $producto)
                 ->with('categorias', $categorias)
@@ -139,31 +117,19 @@ class ProductController extends Controller
             'category_id'=>'required',
             'subcategory_id' => 'required',
         ];
-
-        $mensaje = [
-            'required' => 'el campo :attribute es obligatorio'
-        ];
-
+        $mensaje = ['required' => 'el campo :attribute es obligatorio'];
         $this->validate($request, $reglas, $mensaje);
-
         $producto = Product::find($id);
-
-         $producto->name = $request->input('name') !== $producto->name ? $request->input('name') : $producto->name;
-
-         $producto->description = $request->input('description') !== $producto->description ? $request->input('description') : $producto->description;
-         $producto->category_id = $request->input('category_id') !== $producto->category_id ? $request->input('category_id') : $producto->category_id;
-         $producto->subcategory_id = $request->input('subcategory_id') !== $producto->subcategory_id ? $request->input('subcategory_id') : $producto->subcategory_id;
-
-         
-         if($request->file('cover') !== null){
-            $cover = $request->file('cover')->store('covers','public');
-            $producto->cover = $cover;
-         }
-         
-         $producto->save();
-
-         return redirect("/profile");
-
+        $producto->name = $request->input('name') !== $producto->name ? $request->input('name') : $producto->name;
+        $producto->description = $request->input('description') !== $producto->description ? $request->input('description') : $producto->description;
+        $producto->category_id = $request->input('category_id') !== $producto->category_id ? $request->input('category_id') : $producto->category_id;
+        $producto->subcategory_id = $request->input('subcategory_id') !== $producto->subcategory_id ? $request->input('subcategory_id') : $producto->subcategory_id;        
+        if($request->file('cover') !== null){
+        $cover = $request->file('cover')->store('covers','public');
+        $producto->cover = $cover;
+        }        
+        $producto->save();
+        return redirect("/profile");
     }
 
     /**
@@ -177,5 +143,15 @@ class ProductController extends Controller
        $producto=Product::find($id);
        $producto->delete();
        return redirect("/profile");
+   }
+
+   public function search(Request $request)
+   {
+       $clave = $request->clave;
+       $products = Product::where('name', 'LIKE', "%$clave%")->get();
+       $mensaje = 'Encontramos'." ".count($products)." ".'resultados para tu busqueda';
+       return view('productos.results')->with('products', $products)
+                                       ->with('clave', $clave)
+                                       ->with('mensaje', $mensaje);
    }
 }

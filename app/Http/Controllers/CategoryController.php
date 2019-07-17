@@ -67,7 +67,7 @@ class CategoryController extends Controller
     public function show($id)
     {
         $categoria=Category::find($id);
-        $productos=Product::all();
+        $productos = Product::where('category_id', $id)->paginate(9);
         $multimedias=Multimedia::all();
         return view('categorias.show')
                 ->with('categoria',$categoria)
@@ -77,7 +77,7 @@ class CategoryController extends Controller
 
     public function hotStuff()
     {
-        $products = Product::where('hits', '>', 3)->get();
+        $products = Product::where('hits', '>', 30)->paginate(9);
         return view('categorias.hotstuff')->with('products', $products);
     }
 }

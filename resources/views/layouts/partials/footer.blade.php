@@ -21,7 +21,6 @@
             <p class="copy">&copy; 2019 Vintage Treasures SRL - Todos los derechos reservados</p>
         </div>
     </div>
-
     <div class="caja3">
         <div class="links">
             <a href="#">Contacto</a>
